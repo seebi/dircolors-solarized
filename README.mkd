@@ -28,8 +28,8 @@ For the original works of Ethan Schoonover, visit the [Solarized repository].
 The colors for Gnome Terminal is maintained in [Gnome Terminal Colors Solarized
 repository].
 
-Installation
-------------
+Installation and usage
+----------------------
 
 Clone the [git repository], then run one of the scripts: set_light.sh or
 set_dark.sh.
@@ -39,8 +39,21 @@ set_dark.sh.
     $ ./set_light.sh
     $ ./set_dark.sh
 
-See the [Solarized homepage] for screenshots which will help you 
-select either the light or dark background.
+Of course, you only need to run one of the scripts. See the [Solarized
+homepage] for screenshots which will help you select either the light or dark
+background.
+
+Specifying the profile to change
+--------------------------------
+
+And you can run them with a parameter, telling it which profile to modify. To
+change another profile than _Default_, this profile need to exist before you
+run the command. Now, at this point, it is not as easy as it should be, as the
+profile you created in the terminal will have another name on disk; the first
+one will be called Profile0, the second Profile1, etc. Ideally, I would like to
+make this step simpler, but I do not know how to script the creation of a new
+profile that will be visible in the graphical profile settings. Please give me
+a hint if you find a solution!
 
 
 [Solarized homepage]:   http://ethanschoonover.com/solarized
