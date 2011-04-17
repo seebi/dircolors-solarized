@@ -1,0 +1,49 @@
+Solarized Colorscheme for Gnome Terminal
+========================================
+
+Scripts for setting the Solarized color set with Gnome Terminal. Scripts by
+Sigurd Gartmann <sigurdga@sigurdga.no>, based on colors by Ethan Schoonover
+<es@ethanschoonover.com>.
+
+Notes about color settings in Gnome Terminal
+--------------------------------------------
+
+In Gnome terminal there are built-in color profiles, but these are hardcoded
+and we cannot change or add these profiles. These scripts are setting a few
+gconf parameters that will set the palette colors, foreground, background and
+highlight colors to either a light or dark color scheme.
+
+Only the foreground, background and highlight colors are different in the light
+and dark color sets, as one of the main ideas behind Ethan Schonoovers work is
+to use the same colors in the palette for both.
+
+Visit the [Solarized homepage]
+------------------------------
+
+See the [Solarized homepage] for theory behind the colors, screenshots, details
+and colorscheme versions for Vim, Mutt, popular terminal emulators and other
+applications.
+
+For the original works of Ethan Schoonover, visit the [Solarized repository].
+The colors for Gnome Terminal is maintained in [Gnome Terminal Colors Solarized
+repository].
+
+Installation
+------------
+
+Clone the [git repository], then run one of the scripts: set_light.sh or
+set_dark.sh.
+
+    $ git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+    $ cd gnome-terminal-colors-solarized
+    $ ./set_light.sh
+    $ ./set_dark.sh
+
+See the [Solarized homepage] for screenshots which will help you 
+select either the light or dark background.
+
+
+[Solarized homepage]:   http://ethanschoonover.com/solarized
+[Solarized repository]: https://github.com/altercation/solarized
+[Gnome Terminal Colors Solarized repository]: https://github.com/sigurdga/gnome-terminal-colors-solarized
+
