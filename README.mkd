@@ -2,16 +2,16 @@ Solarized Colorscheme for Gnome Terminal
 ========================================
 
 Scripts for setting the Solarized color set with Gnome Terminal. Scripts by
-Sigurd Gartmann <sigurdga@sigurdga.no>, based on colors by Ethan Schoonover
-<es@ethanschoonover.com>.
+Sigurd Gartmann <sigurdga@sigurdga.no> and Paul Thomson <captbunzo@gmail.com>,
+based on colors by Ethan Schoonover <es@ethanschoonover.com>.
 
 Notes about color settings in Gnome Terminal
 --------------------------------------------
 
 In Gnome terminal there are built-in color profiles, but these are hardcoded
-and we cannot change or add these profiles. These scripts are setting a few
-gconf parameters that will set the palette colors, foreground, background and
-highlight colors to either a light or dark color scheme.
+and we cannot change or add these profiles. Here, you'll find a script that
+will set the palette colors, foreground, background and highlight colors to
+a light or dark color scheme.
 
 Only the foreground, background and highlight colors are different in the light
 and dark color sets, as one of the main ideas behind Ethan Schonoovers work is
@@ -36,27 +36,13 @@ set_dark.sh.
 
     $ git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
     $ cd gnome-terminal-colors-solarized
-    $ ./set_light.sh
-    $ ./set_dark.sh
+    $ ./install.sh
 
-Of course, you only need to run one of the scripts. See the [Solarized
-homepage] for screenshots which will help you select either the light or dark
-background.
-
-Specifying the profile to change
---------------------------------
-
-And you can run them with a parameter, telling it which profile to modify. To
-change another profile than _Default_, this profile need to exist before you
-run the command. Now, at this point, it is not as easy as it should be, as the
-profile you created in the terminal will have another name on disk; the first
-one will be called Profile0, the second Profile1, etc. Ideally, I would like to
-make this step simpler, but I do not know how to script the creation of a new
-profile that will be visible in the graphical profile settings. Please give me
-a hint if you find a solution!
+The _install.sh_ script will guide you through some settings, asking if you
+want the light or dark color scheme, and which of your Gnome Terminal settings
+you will apply it to.
 
 
 [Solarized homepage]:   http://ethanschoonover.com/solarized
 [Solarized repository]: https://github.com/altercation/solarized
 [Gnome Terminal Colors Solarized repository]: https://github.com/sigurdga/gnome-terminal-colors-solarized
-
