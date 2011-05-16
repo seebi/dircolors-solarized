@@ -1,5 +1,11 @@
 # Solarized dircolors / ls colors
 
+A color theme for dircolors (ls colors) using Ethan Schoonover’s [Solarized color scheme](http://ethanschoonover.com/solarized).
+
+## Repositories
+  * This theme as a single repository: [/seebi/dircolors-solarized](https://github.com/seebi/dircolors-solarized)
+  * The main solarized repository: [/altercation/solarized](https://github.com/altercation/solarized)
+
 ## Files
   * `dircolors.256dark` - dark solarized theme for 256 color terminals (by [seebi](https://github.com/seebi))
 
