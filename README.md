@@ -21,8 +21,9 @@ Typically, this file is copied or linked to `~/.dir_colors`.
 To be able to use it, you need a 256 color terminal (e.g. gnome-terminal or
 urxvt) and a correct `TERM` variable, e.g.:
 
-    export TERM=xterm-256color  # for common 256 color terminals
-    export TERM=screen-256color # for a tmux -2 session
+    export TERM=xterm-256color        # for common 256 color terminals (e.g. gnome-terminal)
+    export TERM=screen-256color       # for a tmux -2 session (also for screen)
+    export TERM=rxvt-unicode-256color # for a colorful rxvt unicode session
 
 ## Features / Properties
   * solarized :-)
