@@ -37,17 +37,17 @@ They are captured from a gnome-terminal using the [dz-version of the awesome Inc
 #### Common colors in action
 Executables, archives, audio/video stuff, dead links
 
-![common use-cases](https://github.com/seebi/solarized/raw/ls-colors/ls-colors-solarized/screenshots/256dark-common.png)
+![common use-cases](https://github.com/seebi/dircolors-solarized/raw/master/screenshots/256dark-common.png)
 
 #### Use-Case: Latex directory
 tex-trash is in comment style and pdf+tex are main files of interest and
 highlighted.
 
-![common use-cases](https://github.com/seebi/solarized/raw/ls-colors/ls-colors-solarized/screenshots/256dark-latex.png)
+![common use-cases](https://github.com/seebi/dircolors-solarized/raw/master/screenshots/256dark-latex.png)
 
 #### All colors in action
 uncommon stuff like pipes and block devices ...
 
-![not so common use-cases](https://github.com/seebi/solarized/raw/ls-colors/ls-colors-solarized/screenshots/256dark-all.png)
+![not so common use-cases](https://github.com/seebi/dircolors-solarized/raw/master/screenshots/256dark-all.png)
 
 
