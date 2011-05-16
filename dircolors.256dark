@@ -162,6 +162,7 @@ EXEC 01;38;5;64
 .cgm    00;38;5;136
 .emf    00;38;5;136
 .eps    00;38;5;136
+.CR2    00;38;5;136
 
 # files of interest (base1 + bold)
 .pdf     01;38;5;245
