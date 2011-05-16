@@ -183,6 +183,7 @@ EXEC 01;38;5;64
 *#          00;38;5;240
 .part       00;38;5;240
 .incomplete 00;38;5;240
+.swp        00;38;5;240
 
 # audio formats (orange)
 .aac    00;38;5;166
