@@ -45,10 +45,9 @@ urxvt) and a correct `TERM` variable, e.g.:
 Here is a screenshot of a prepared [tmux](http://tmux.sourceforge.net/)-session.
 It is captured from a gnome-terminal using the [dz-version of the awesome Inconsolata font](http://nodnod.net/2009/feb/12/adding-straight-single-and-double-quotes-inconsola/).
 
-![tmux session](https://github.com/seebi/dircolors-solarized/raw/master/dircolors.256dark.png)
-
  * upper left - Common colors in action: Executables, archives, audio/video stuff, dead links
  * lower left - latex directory: tex-trash is in comment style and tex are main files of interest and highlighted
  * upper right and thereunder - source directories: all source files are standard highlighted, makefiles, configuration files and READMEs are of special interest, and object and class files are commented out.
  * lower right - all colors in action, uncommon stuff like pipes and block devices
 
+![tmux session](https://github.com/seebi/dircolors-solarized/raw/master/dircolors.256dark.png)
