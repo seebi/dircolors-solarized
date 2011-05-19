@@ -27,13 +27,17 @@ urxvt) and a correct `TERM` variable, e.g.:
 
 ## Features / Properties
   * solarized :-)
-  * comment style for backup and log files
-  * highlighted style for files of special interest (.tex, .pdf, ...)
+  * comment style for backup and log and cache files
+  * highlighted style for files of special interest (.tex, Makefiles, .ini ...)
   * bold hierarchies:
     * archive = violet, compressed archive = violet + bold
     * audio = orange, video = orange + bold
+  * tested use-cases:
+    * latex directories
+    * source code directories
   * special files (block devices, pipes, ...) are inverted using the
     solarized light pallette for the background
+  * symbolic links bold and distinguishable from directories
 
 ## Screenshots
 
@@ -47,8 +51,7 @@ Executables, archives, audio/video stuff, dead links
 ![common use-cases](https://github.com/seebi/dircolors-solarized/raw/master/screenshots/256dark-common.png)
 
 #### Use-Case: LaTeX
-tex-trash is in comment style and pdf+tex are main files of interest and
-highlighted.
+tex-trash is in comment style and tex are main files of interest and highlighted.
 
 ![common use-cases](https://github.com/seebi/dircolors-solarized/raw/master/screenshots/256dark-latex.png)
 
