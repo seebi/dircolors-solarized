@@ -28,7 +28,7 @@ Read on for more details.
     Solarized colors to the exact Solarized palette; and this theme would
     automatically improve.  Work on an appropriate .Xresources has not yet
     started. (See [256-color remapping
-    discussion](https://github.com/altercation/solarized/issues/8)].)
+    discussion](https://github.com/altercation/solarized/issues/8).)
 
 2.  "ansi-universal" - Universal theme for 16-color or 256-color
     terminal emulators and any version of dircolors.  It is optimized for
