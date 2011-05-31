@@ -365,8 +365,7 @@ matched in sRGB space.
 
 NOTE:
 
-*   for "16-color Exact" themes, the TERMCOL column lists the ANSI colors that are replaced 
+*   for "ANSI" themes, the TERMCOL column lists the ANSI colors that are replaced 
     with Solarized colors
-*   for "256-color Degraded" themes, the HEX column lists the approximate Solarized
+*   for "256-color" themes, the XTERM/HEX column lists the approximate Solarized
     colors that are used
-
