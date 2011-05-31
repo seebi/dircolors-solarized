@@ -1,22 +1,31 @@
-# Solarized Color Theme for GNU ls (as setup by GNU dircolors)
+<h1>Solarized Color Theme for GNU ls (as setup by GNU dircolors)</h1>
 
-This is a repository of themes for GNU ls (configured via GNU dircolors) that support Ethan Schoonover’s [Solarized color scheme](http://ethanschoonover.com/solarized).
+This is a repository of themes for GNU ls (configured via GNU
+dircolors) that support Ethan Schoonover’s [Solarized color
+scheme](http://ethanschoonover.com/solarized).
 
-## Visit the Solarized homepage
+See the [Solarized homepage](http://ethanschoonover.com/solarized)
+for screenshots, details and color theme implementations for terminal
+emulators and other applications, such as Vim, Emacs, and Mutt.
 
-See the [Solarized homepage](http://ethanschoonover.com/solarized) for
-screenshots, details and color theme implementations for terminal emulators and
-other applications, such as Vim, Emacs, and Mutt.
+<h2>(Selected) Table of Contents</h2>
 
-## Repositories
+* [Repositories](#repositories)
+* [Themes](#themes)
+  * [Theme #1: "256dark"](#256dark)
+  * [Theme #2: "ansi-\*"](#ansi)
+* [Installation](#installation)
+* [Understanding Solarized Colors in Terminals](#understanding)
+
+<h2 id="repositories">Repositories</h2>
 
   * The main Solarized repository: [/altercation/solarized](https://github.com/altercation/solarized)
   * These themes as a separate repository: [/seebi/dircolors-solarized](https://github.com/seebi/dircolors-solarized)
 
-## Themes
+<h2 id="themes">Themes</h2>
 
-First, note that "256 colors" does not necessarily mean better than "ANSI".
-Read on for more details.
+First, note that "256 colors" does not necessarily mean better than    .
+"ANSI" Read on for more details                                        .
 
 1.  "256dark" - Degraded Solarized Dark theme for terminal emulators and
     newer dircolors that both support 256 colors. This theme allows for the display
@@ -27,8 +36,7 @@ Read on for more details.
     Note: In the future, it may be possible to change the approximate
     Solarized colors to the exact Solarized palette; and this theme would
     automatically improve.  Work on an appropriate .Xresources has not yet
-    started. (See [256-color remapping
-    discussion](https://github.com/altercation/solarized/issues/8).)
+    started. (See [256-color remapping discussion](https://github.com/altercation/solarized/issues/8).)
 
 2.  "ansi-universal" - Universal theme for 16-color or 256-color
     terminal emulators and any version of dircolors.  It is optimized for
@@ -45,9 +53,9 @@ Read on for more details.
     optimized for the Solarized Light palette to the slight detriment of the
     Solarized Dark palette.
 
-### Theme #1: "256dark" (by [seebi](https://github.com/seebi))
+<h3 id="256dark">Theme #1: "256dark" (by <a href="https://github.com/seebi">seebi</a>)</h3>
 
-#### Features / Properties
+<h4 id="256dark-features">Features / Properties</h4>
 
   * Solarized :-)
   * Comment style for backup and log and cache files
@@ -62,26 +70,26 @@ Read on for more details.
     solarized light pallette for the background
   * Symbolic links bold and distinguishable from directories
 
-#### Screenshots
+<h4 id="256dark-screenshots">Screenshots</h4>
 
-Here is a screenshot of a prepared [tmux](http://tmux.sourceforge.net/)-session.
+Here is a [1920pxx1200px screenshot](https://github.com/seebi/dircolors-solarized/raw/master/img/dircolors.256dark.png) of a prepared [tmux](http://tmux.sourceforge.net/)-session.
 It is captured from a gnome-terminal using the [dz-version of the awesome Inconsolata font](http://nodnod.net/2009/feb/12/adding-straight-single-and-double-quotes-inconsola/).
 
- * upper left - Common colors in action: Executables, archives, audio/video stuff, dead links
- * lower left - latex directory: tex-trash is in comment style and tex are main files of interest and highlighted
- * upper right and thereunder - source directories: all source files are standard highlighted, makefiles, configuration files and READMEs are of special interest, and object and class files are commented out.
- * lower right - all colors in action, uncommon stuff like pipes and block devices
+ * **upper left** - Common colors in action: Executables, archives, audio/video stuff, dead links
+ * **lower left** - latex directory: tex-trash is in comment style and tex are main files of interest and highlighted
+ * **upper right and thereunder** - source directories: all source files are standard highlighted, makefiles, configuration files and READMEs are of special interest, and object and class files are commented out.
+ * **lower right** - all colors in action, uncommon stuff like pipes and block devices
 
-![tmux session](https://github.com/seebi/dircolors-solarized/raw/master/dircolors.256dark.png)
+![tmux session](https://github.com/seebi/dircolors-solarized/raw/master/img/dircolors.256dark.png)
 
-### Theme #2: "ansi-\*" (by [huyz](https://github.com/huyz))
+<h3 id="ansi">Theme #2: "ansi-\*" (by <a href="https://github.com/huyz">huyz</a>)</h3>
 
 These similar themes were created by (Huy Z \<huy-git-pub circled-a huyzing.com\>).
 
 They require that the terminal emulator be properly configured to display
 the Solarized palette instead of the 16 default ANSI colors.
 
-#### Features / Properties
+<h4 id="ansi-features">Features / Properties</h4>
 
 These themes, called "ansi-universal", "ansi-dark", and "ansi-light", were
 designed to work best with both Solarized Dark and Light palettes, but also to
@@ -112,7 +120,7 @@ Colors were selected based on the characteristics of the items to be displayed:
     simultaneously supporting dark and light backgrounds)
 -   Loud colors are chosen to call attention to noteworthy items
 
-#### Screenshots
+<h4 id="ansi-screenshots">Screenshots</h4>
 
 Solarized Dark (this example uses iTerm2 on OS X):
 
@@ -127,7 +135,7 @@ To see what this theme looks like when the terminal emulator is set with differe
 *   [Default light colors of PuTTY on Windows](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-dircolors-in-PuTTY-light_system.png) (Select "Use system colors")
 
 
-## Installation
+<h2 id="installation">Installation</h2>
 
 ### Downloads
 
@@ -207,7 +215,7 @@ Example: for iTerm2, these are the correct settings:
 ![iTerm bold settings](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-iTerm2-bold-options.png)
 
 
-## Understanding Solarized Colors in Terminals
+<h2 id="understanding">Understanding Solarized Colors in Terminals</h2>
 
 ### How Solarized works with ANSI-redefinition themes
 
