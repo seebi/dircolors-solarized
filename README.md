@@ -1,6 +1,6 @@
 # Solarized Color Theme for GNU ls (as setup by GNU dircolors)
 
-This is a repository of themes for GNU ls, which reads its color theme from GNU dircolors, that support Ethan Schoonover’s [Solarized color scheme](http://ethanschoonover.com/solarized).
+This is a repository of themes for GNU ls (configured via GNU dircolors) that support Ethan Schoonover’s [Solarized color scheme](http://ethanschoonover.com/solarized).
 
 ## Visit the Solarized homepage
 
@@ -18,11 +18,11 @@ other applications, such as Vim, Emacs, and Mutt.
 First, note that "256 colors" does not necessarily mean better than "ANSI".
 Read on for more details.
 
-1)  `256dark` - Degraded Solarized Dark theme for terminal emulators and
+*   "256dark" - Degraded Solarized Dark theme for terminal emulators and
     newer dircolors that both support 256 colors. This theme allows for the display
     of the *approximate* Solarized palette, but it's very easy to set up and allows
     for the use of many more colors beyond the 16 in Solarized.
-    (By [seebi](https://github.com/seebi).)
+    (By [seebi](https://github.com/seebi))
 
     Note: In the future, it may be possible to change the approximate
     Solarized colors to the exact Solarized palette; and this theme would
@@ -30,22 +30,22 @@ Read on for more details.
     started. (See [256-color remapping
     discussion](https://github.com/altercation/solarized/issues/8)].)
 
-2)  `ansi-universal` - Universal theme for 16-color or 256-color
+*   "ansi-universal" - Universal theme for 16-color or 256-color
     terminal emulators and any version of dircolors.  It is optimized for
     Solarized Dark and Light and acceptable with default ANSI colors. This theme allows
     for the display of the *exact* Solarized palette, but it requires the reconfiguration
     of the terminal emulator's ANSI color settings and limits you to the 16
-    Solarized colors. (By [huyz](https://github.com/huyz).)
+    Solarized colors. (By [huyz](https://github.com/huyz))
 
-    `ansi-dark` - Tweaked version of `dircolors.ansi-universal`, slightly more
+    "ansi-dark" - Tweaked version of `dircolors.ansi-universal`, slightly more
     optimized for the Solarized Dark palette to the slight detriment of the
     Solarized Light palette.
 
-    `ansi-light` - Tweaked version of `dircolors.ansi-universal`, slightly more
+    "ansi-light" - Tweaked version of `dircolors.ansi-universal`, slightly more
     optimized for the Solarized Light palette to the slight detriment of the
     Solarized Dark palette.
 
-### `256dark` (by [seebi](https://github.com/seebi))
+### Theme #1: "256dark" (by [seebi](https://github.com/seebi))
 
 #### Features / Properties
 
@@ -74,17 +74,16 @@ It is captured from a gnome-terminal using the [dz-version of the awesome Incons
 
 ![tmux session](https://github.com/seebi/dircolors-solarized/raw/master/dircolors.256dark.png)
 
-### `ansi-*`
+### Theme #2: "ansi-\*" (by [huyz](https://github.com/huyz))
 
-These similar themes were created by [huyz](https://github.com/huyz)
-(Huy Z \<huy-git-pub circled-a huyzing.com\>).
+These similar themes were created by (Huy Z \<huy-git-pub circled-a huyzing.com\>).
 
 They require that the terminal emulator be properly configured to display
 the Solarized palette instead of the 16 default ANSI colors.
 
 #### Features / Properties
 
-These themes, called `ansi-universal`, `ansi-dark`, and `ansi-light`, were
+These themes, called "ansi-universal", "ansi-dark", and "ansi-light", were
 designed to work best with both Solarized Dark and Light palettes, but also to
 work under terminals' default ANSI colors. In other words, these themes were
 designed with a "fallback" scenario: if you happen to find yourself on a
@@ -93,16 +92,16 @@ elements become invisible, incrediby hard to read, or a boring gray.
 
 Thus, the universal theme was designed with these 4 palettes in mind:
 
--   Solarized Dark: `ansi-universal` works best when the terminal emulator is
+-   Solarized Dark: "ansi-universal" works best when the terminal emulator is
     set to this scheme
--   Solarized Light: `ansi-universal` works, when the terminal emulator is set
+-   Solarized Light: "ansi-universal" works, when the terminal emulator is set
     to this scheme, almost as well as with Solarized Dark (you probably won't
     notice the difference, but if you do, it could be optimized slightly by
     switching the theme's use of some of the Solarized base colors)
 -   Default terminal ANSI Colors with a dark background
 -   Default terminal ANSI Colors with a light background
 
-The `ansi-dark` and `ansi-light` are slightly optimized versions of `ansi-universal`
+The "ansi-dark" and "ansi-light" are slightly optimized versions of "ansi-universal"
 for Solarized Dark and Solarized Light, respectively, if you're willing
 to sacrifice a bit of universality.
 
@@ -113,15 +112,15 @@ Colors were selected based on the characteristics of the items to be displayed:
     simultaneously supporting dark and light backgrounds)
 -   Loud colors are chosen to call attention to noteworthy items
 
-#### Screenshots for `ansi-universal`
+#### Screenshots
 
 Solarized Dark (this example uses iTerm2 on OS X):
 
-![Solarized Dark](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-dicolors-in-iTerm2-solarized_dark.png)]
+![Solarized Dark](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-dircolors-in-iTerm2-solarized_dark.png)]
 
 To see what this theme looks like when the terminal emulator is set with different color palettes:
 
-*   [Solarized Light (with iTerm2 on OS X)](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-dicolors-in-iTerm2-solarized_light.png)
+*   [Solarized Light (with iTerm2 on OS X)](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-dircolors-in-iTerm2-solarized_light.png)
 *   [Default dark background of iTerm on OS X](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-dircolors-in-iTerm-dark.png)
 *   [Default light background of iTerm on OS X](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-dircolors-in-iTerm-light.png)
 *   [Default dark colors of PuTTY on Windows](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-dircolors-in-PuTTY-dark_default.png)
@@ -146,7 +145,7 @@ At this time, issues, bug reports, changelogs are to be reported at the
 If you want to access the latest improvements to a specific theme, then go to
 that theme's unique github directory:
 
-*   `256dark`:                  https://github.com/seebi/dircolors-solarized
+*   "256dark":                  https://github.com/seebi/dircolors-solarized
 *   `ansi-*`:                   https://github.com/huyz/dircolors-solarized
 
 [Solarized repository]:         https://github.com/altercation/solarized
@@ -165,9 +164,9 @@ To activate the theme for all future shell sessions, copy or link that file to
 `~/.dir_colors`, and include the above command in your `~/.profile` (for bash)
 or `~/.zshrc` (for zsh).
 
-### Additional Instructions for 256-color Solarized Themes, e.g. `256dark`
+### Additional Instructions for 256-color Solarized Themes, e.g. "256dark"
 
-For the 256-color Solarized dircolors themes, such as `256dark`, you need a 256-color
+For the 256-color Solarized dircolors themes, such as "256dark", you need a 256-color
 terminal (e.g. `gnome-terminal` or `urxvt`) and a correct `TERM` variable,
 e.g.:
 
@@ -175,7 +174,7 @@ e.g.:
     export TERM=screen-256color       # for a tmux -2 session (also for screen)
     export TERM=rxvt-unicode-256color # for a colorful rxvt unicode session
 
-### Additional Instructions for ANSI Solarized Themes, e.g. `ansi-universal`
+### Additional Instructions for ANSI Solarized Themes, e.g. "ansi-universal"
 
 For the ANSI Solarized dircolors themes (which work with both 16-color and
 256-color terminals) you must configure your terminal emulator (See the
@@ -205,7 +204,7 @@ explanation behind these settings):
 
 Example: for iTerm2, these are the correct settings:
 
-![iTerm bold settings](https://github.com/huyz/dicolors-solarized/raw/master/img/screen-iTerm2-bold-options.png)
+![iTerm bold settings](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-iTerm2-bold-options.png)
 
 
 ## Understanding Solarized Colors in Terminals
@@ -313,7 +312,7 @@ better than ANSI dircolors themes for displaying the Solarized palette?  Not
 necessarily.  Solarized is a 16-color palette with unique RGB values.
 256-color terminal emulators have more colors than the ANSI palette but
 completely different RGB values. (See [8-bit color
-graphics](http://en.wikipedia.org/wiki/256_colors).) The `256dark`
+graphics](http://en.wikipedia.org/wiki/256_colors).) The "256dark"
 theme was designed to use these standard fixed colors.
 
 #### How Solarized could work with 256 colors without touching ANSI
@@ -350,6 +349,7 @@ NOTE:
     with Solarized colors
 *   for "256-color Degraded" themes, the HEX column lists the approximate Solarized
     colors that are used
+
 
     SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      sRGB        HSB
     --------- ------- ---- -------  ----------- ---------- ----------- -----------
