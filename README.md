@@ -18,7 +18,7 @@ other applications, such as Vim, Emacs, and Mutt.
 First, note that "256 colors" does not necessarily mean better than "ANSI".
 Read on for more details.
 
-*   "256dark" - Degraded Solarized Dark theme for terminal emulators and
+1.  "256dark" - Degraded Solarized Dark theme for terminal emulators and
     newer dircolors that both support 256 colors. This theme allows for the display
     of the *approximate* Solarized palette, but it's very easy to set up and allows
     for the use of many more colors beyond the 16 in Solarized.
@@ -30,7 +30,7 @@ Read on for more details.
     started. (See [256-color remapping
     discussion](https://github.com/altercation/solarized/issues/8)].)
 
-*   "ansi-universal" - Universal theme for 16-color or 256-color
+2.  "ansi-universal" - Universal theme for 16-color or 256-color
     terminal emulators and any version of dircolors.  It is optimized for
     Solarized Dark and Light and acceptable with default ANSI colors. This theme allows
     for the display of the *exact* Solarized palette, but it requires the reconfiguration
@@ -146,7 +146,7 @@ If you want to access the latest improvements to a specific theme, then go to
 that theme's unique github directory:
 
 *   "256dark":                  https://github.com/seebi/dircolors-solarized
-*   `ansi-*`:                   https://github.com/huyz/dircolors-solarized
+*   "ansi-\*":                   https://github.com/huyz/dircolors-solarized
 
 [Solarized repository]:         https://github.com/altercation/solarized
 [dircolors-only repository]:    https://github.com/seebi/dircolors-solarized
@@ -343,13 +343,6 @@ The Solarized Color Values
 L\*a\*b values are canonical (White D65, Reference D50), other values are
 matched in sRGB space.
 
-NOTE:
-
-*   for "16-color Exact" themes, the TERMCOL column lists the ANSI colors that are replaced 
-    with Solarized colors
-*   for "256-color Degraded" themes, the HEX column lists the approximate Solarized
-    colors that are used
-
 
     SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      sRGB        HSB
     --------- ------- ---- -------  ----------- ---------- ----------- -----------
@@ -369,3 +362,11 @@ NOTE:
     blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
     cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
     green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
+
+NOTE:
+
+*   for "16-color Exact" themes, the TERMCOL column lists the ANSI colors that are replaced 
+    with Solarized colors
+*   for "256-color Degraded" themes, the HEX column lists the approximate Solarized
+    colors that are used
+
