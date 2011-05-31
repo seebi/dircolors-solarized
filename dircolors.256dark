@@ -1,11 +1,14 @@
-# Configuration file for dircolors, a utility to help you set the
-# LS_COLORS environment variable used by GNU ls with the --color option.
-# Copyright (C) 1996, 1999-2010 Free Software Foundation, Inc.
-# Copying and distribution of this file, with or without modification,
-# are permitted provided the copyright notice and this notice are preserved.
-# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
-# slackware version of dircolors) are recognized but ignored.
-# Below, there should be one TERM entry for each termtype that is colorizable
+
+# Dark 256 color solarized theme for the color GNU ls utility.
+# Used and tested with dircolors (GNU coreutils) 8.5
+#
+# @author  {@link http://sebastian.tramp.name Sebastian Tramp}
+# @license http://sam.zoy.org/wtfpl/  Do What The Fuck You Want To Public License (WTFPL)
+#
+# More Information at
+# https://github.com/seebi/dircolors-solarized
+
+# Term Section
 TERM Eterm
 TERM ansi
 TERM color-xterm
@@ -54,6 +57,11 @@ TERM xterm-256color
 TERM xterm-88color
 TERM xterm-color
 TERM xterm-debian
+
+## Documentation
+#
+# standard colors
+#
 # Below are the color init strings for the basic file types. A color init
 # string consists of one or more of the following numeric codes:
 # Attribute codes:
@@ -62,12 +70,17 @@ TERM xterm-debian
 # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-
-## dircolors 256 COLOR SUPPORT (see here: http://www.mail-archive.com/bug-coreutils@gnu.org/msg11030.html)
+#
+#
+# 256 color support
+# see here: http://www.mail-archive.com/bug-coreutils@gnu.org/msg11030.html)
+#
 # Text 256 color coding:
 # 38;5;COLOR_NUMBER
 # Background 256 color coding:
 # 48;5;COLOR_NUMBER
+
+## Special files
 
 NORMAL 00;38;5;244 # no color code at all
 #FILE 00 # regular file: use no color at all
@@ -90,21 +103,8 @@ OTHER_WRITABLE 48;5;235;38;5;33 # dir that is other-writable (o+w) and not stick
 STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
 EXEC 01;38;5;64
-# List any file extensions like '.gz' or '.tar' that you would like ls
-# to colorize below. Put the extension, a space, and the color init string.
-# (and any comments you want to add after a '#')
-# If you use DOS-style suffixes, you may want to uncomment the following:
-#.cmd 01;32 # executables (bright green)
-#.exe 01;32
-#.com 01;32
-#.btm 01;32
-#.bat 01;32
-# Or if you want to colorize scripts even if they do not have the
-# executable bit actually set.
-#.sh 01;32
-#.csh 01;32
 
- # archives or compressed (violet + bold for compression)
+## Archives or compressed (violet + bold for compression)
 .tar    00;38;5;61
 .tgz    01;38;5;61
 .arj    01;38;5;61
@@ -136,7 +136,7 @@ EXEC 01;38;5;64
 .rz     01;38;5;61
 .apk    01;38;5;61
 
-# image formats (yellow)
+# Image formats (yellow)
 .jpg    00;38;5;136
 .JPG    00;38;5;136 #stupid but needed
 .jpeg   00;38;5;136
@@ -165,7 +165,7 @@ EXEC 01;38;5;64
 .CR2    00;38;5;136
 .ico    00;38;5;136
 
-# files of special interest (base1 + bold)
+# Files of special interest (base1 + bold)
 .tex             01;38;5;245
 .rdf             01;38;5;245
 .owl             01;38;5;245
@@ -205,7 +205,7 @@ EXEC 01;38;5;64
 .class      00;38;5;240
 .cache      00;38;5;240
 
-# audio formats (orange)
+# Audio formats (orange)
 .aac    00;38;5;166
 .au     00;38;5;166
 .flac   00;38;5;166
@@ -224,7 +224,7 @@ EXEC 01;38;5;64
 .spx    00;38;5;166
 .xspf   00;38;5;166
 
-# video formats (as audio + bold)
+# Video formats (as audio + bold)
 .mov    01;38;5;166
 .mpg    01;38;5;166
 .mpeg   01;38;5;166
@@ -252,3 +252,5 @@ EXEC 01;38;5;64
 .anx 01;38;5;166
 .ogv 01;38;5;166
 .ogx 01;38;5;166
+
+
