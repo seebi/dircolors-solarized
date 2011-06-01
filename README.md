@@ -24,8 +24,8 @@ emulators and other applications, such as Vim, Emacs, and Mutt.
 
 <h2 id="themes">Themes</h2>
 
-First, note that "256 colors" does not necessarily mean better than    .
-"ANSI" Read on for more details                                        .
+First, note that "256 colors" does not necessarily mean better than "ANSI".
+Read on for more details.
 
 1.  "256dark" - Degraded Solarized Dark theme for terminal emulators and
     newer dircolors that both support 256 colors. This theme allows for the display
@@ -45,11 +45,11 @@ First, note that "256 colors" does not necessarily mean better than    .
     of the terminal emulator's ANSI color settings and limits you to the 16
     Solarized colors. (By [huyz](https://github.com/huyz))
 
-    "ansi-dark" - Tweaked version of `dircolors.ansi-universal`, slightly more
+    "ansi-dark" - Tweaked version of "ansi-universal", slightly more
     optimized for the Solarized Dark palette to the slight detriment of the
     Solarized Light palette.
 
-    "ansi-light" - Tweaked version of `dircolors.ansi-universal`, slightly more
+    "ansi-light" - Tweaked version of "ansi-universal", slightly more
     optimized for the Solarized Light palette to the slight detriment of the
     Solarized Dark palette.
 
@@ -84,28 +84,27 @@ It is captured from a gnome-terminal using the [dz-version of the awesome Incons
 
 <h3 id="ansi">Theme #2: "ansi-\*" (by <a href="https://github.com/huyz">huyz</a>)</h3>
 
-These similar themes were created by (Huy Z \<huy-git-pub circled-a huyzing.com\>).
+This theme and its variants were created by (Huy Z \<huy-git-pub circled-a huyzing.com\>).
 
 They require that the terminal emulator be properly configured to display
 the Solarized palette instead of the 16 default ANSI colors.
 
 <h4 id="ansi-features">Features / Properties</h4>
 
-These themes, called "ansi-universal", "ansi-dark", and "ansi-light", were
-designed to work best with both Solarized Dark and Light palettes, but also to
-work under terminals' default ANSI colors. In other words, these themes were
-designed with a "fallback" scenario: if you happen to find yourself on a
-terminal where the Solarized palette has not been set up, you won't have
-elements become invisible, incrediby hard to read, or a boring gray.
+This theme called "ansi-universal" and its variants "ansi-dark" and
+"ansi-light", were designed to work best with both Solarized Dark and Light
+palettes, but also to work under terminals' default ANSI colors. In other
+words, these themes were designed with a "fallback" scenario: if you happen to
+find yourself on a terminal where the Solarized palette has not been set up,
+you won't have elements become invisible, incrediby hard to read, or a boring
+gray.
 
 Thus, the universal theme was designed with these 4 palettes in mind:
 
 -   Solarized Dark: "ansi-universal" works best when the terminal emulator is
     set to this scheme
--   Solarized Light: "ansi-universal" works, when the terminal emulator is set
-    to this scheme, almost as well as with Solarized Dark (you probably won't
-    notice the difference, but if you do, it could be optimized slightly by
-    switching the theme's use of some of the Solarized base colors)
+-   Solarized Light: "ansi-universal" works best when the terminal emulator is
+    set to this scheme
 -   Default terminal ANSI Colors with a dark background
 -   Default terminal ANSI Colors with a light background
 
@@ -154,7 +153,7 @@ If you want to access the latest improvements to a specific theme, then go to
 that theme's unique github directory:
 
 *   "256dark":                  https://github.com/seebi/dircolors-solarized
-*   "ansi-\*":                   https://github.com/huyz/dircolors-solarized
+*   "ansi-\*":                  https://github.com/huyz/dircolors-solarized
 
 [Solarized repository]:         https://github.com/altercation/solarized
 [dircolors-only repository]:    https://github.com/seebi/dircolors-solarized
@@ -162,8 +161,7 @@ that theme's unique github directory:
 ### General Instructions
 
 The Solarized color themes are distributed as database files for GNU
-dircolors, which is the application that sets up colors for GNU ls.  They use
-Solarized colors instead of the default terminal emulator's defeault palette.
+dircolors, which is the application that sets up colors for GNU ls.
 To use any of the database files, run this:
 
     eval `dircolors /path/to/dircolorsdb`
@@ -281,7 +279,7 @@ versions of the 8 default ANSI colors and the bright versions of the 8 default
 colors.  Back in the day, when a color program demanded the display of bold
 text, it was probably just easier for terminal emulators to display a brighter
 version of whatever color the text was (and expect the user to interpret that
-as bold) than to display a typeface with a bold weight
+as bold) than to display a typeface with a bold weight.
 
 Nowadays, it is easy for terminal emulators to display bold typefaces, so it
 doesn't make sense for bolded text to change color, but the confusing
@@ -373,7 +371,8 @@ matched in sRGB space.
 
 NOTE:
 
-*   for "ANSI" themes, the TERMCOL column lists the ANSI colors that are replaced 
-    with Solarized colors
-*   for "256-color" themes, the XTERM/HEX column lists the approximate Solarized
-    colors that are used
+*   For "256-color" themes, the XTERM/HEX column lists the approximate Solarized
+    colors that are used (note the RGB values in the XTERM/HEX column only
+    approximates the RGB values in the HEX column).
+*   For "ANSI" themes, the TERMCOL column lists the ANSI colors that are replaced 
+    with the Solarized colors listed under the HEX column.
