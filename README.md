@@ -84,10 +84,9 @@ It is captured from a gnome-terminal using the [dz-version of the awesome Incons
 
 <h3 id="ansi">Theme #2: "ansi-\*" (by <a href="https://github.com/huyz">huyz</a>)</h3>
 
-This theme and its variants were created by (Huy Z \<huy-git-pub circled-a huyzing.com\>).
-
-They require that the terminal emulator be properly configured to display
-the Solarized palette instead of the 16 default ANSI colors.
+This theme and its variants require that the terminal emulator be properly
+configured to display the Solarized palette instead of the 16 default ANSI
+colors.
 
 <h4 id="ansi-features">Features / Properties</h4>
 
