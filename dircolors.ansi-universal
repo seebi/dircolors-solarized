@@ -143,12 +143,12 @@ DIR 36
 # symbolic link
 LINK 35
 
-# pipe, socket, block device, character device (bright yellow on blue)
-FIFO 01;33;44
-SOCK 01;33;44
-DOOR 01;33;44
-BLK  01;33;44
-CHR  01;33;44
+# pipe, socket, block device, character device (blue bg)
+FIFO 30;44
+SOCK 35;44
+DOOR 35;44 # Solaris 2.5 and later
+BLK  33;44
+CHR  37;44
 
 
 #############################################################################
