@@ -8,6 +8,10 @@ See the [Solarized homepage](http://ethanschoonover.com/solarized)
 for screenshots, details and color theme implementations for terminal
 emulators and other applications, such as Vim, Emacs, and Mutt.
 
+Quick note for MacOS users: Your OS does not use GNU ls, so you can not use
+this themes. However, [@logic](https://github.com/logic) provided something
+your can use in [this issue](https://github.com/seebi/dircolors-solarized/issues/10).
+
 <h2>(Selected) Table of Contents</h2>
 
 * [Repositories](#repositories)
