@@ -71,7 +71,7 @@ Read on for more details.
     * latex directories
     * source code directories
   * Special files (block devices, pipes, ...) are inverted using the
-    solarized light pallette for the background
+    solarized light palette  for the background
   * Symbolic links bold and distinguishable from directories
 
 <h4 id="256dark-screenshots">Screenshots</h4>
