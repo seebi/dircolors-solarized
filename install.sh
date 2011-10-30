@@ -45,15 +45,8 @@ do
     visnames[$index]=$(gconftool-2 -g $gconfdir/${profiles[$index]}/visible_name);
 done
 echo "Please select a Gnome Terminal profile:"
-names=$(eval $( 
-   for index in ${!profiles[@]};
-   do
-     if [[ $index == 0 ]];
-     then
-       echo "echo";
-     fi
-     echo "\${visnames[$index]}";
-   done ) )
+IFS=','
+names="${visnames[*]}"
 select profile_name in $names; 
 do 
   if [[ -z $profile_name ]]; then
@@ -63,6 +56,7 @@ do
   break; 
 done
 profile_key=$(expr ${REPLY} - 1)
+unset IFS
 
 #########################################################
 ### Show the choices made and prompt for confirmation ###
