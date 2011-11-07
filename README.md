@@ -89,6 +89,8 @@ It is captured from a gnome-terminal using the [dz-version of the awesome Incons
 
 ![tmux session](https://github.com/seebi/dircolors-solarized/raw/master/img/dircolors.256dark.png)
 
+Some more screenshots are provided by [andrew from webupd8.org](http://www.webupd8.org/2011/04/solarized-must-have-color-paletter-for.html).
+
 <h3 id="ansi">Theme #2: "ansi-\*" (by <a href="https://github.com/huyz">huyz</a>)</h3>
 
 This theme and its variants require that the terminal emulator be properly
