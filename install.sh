@@ -81,7 +81,7 @@ fi
 
 echo -e "Confirmation received -- applying settings\n"
 
-profile_path=/apps/gnome-terminal/profiles/${profiles[$profile_key]}
+profile_path=$gconfdir/${profiles[$profile_key]}
 # set palette
 gconftool-2 -s -t string $profile_path/palette $(cat $dir/colors/palette)
 
