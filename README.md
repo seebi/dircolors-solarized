@@ -80,7 +80,8 @@ Read on for more details.
 <h4 id="256dark-screenshots">Screenshots</h4>
 
 Here is a [1920pxx1200px screenshot](https://github.com/seebi/dircolors-solarized/raw/master/img/dircolors.256dark.png) of a prepared [tmux](http://tmux.sourceforge.net/)-session.
-It is captured from a gnome-terminal using the [dz-version of the awesome Inconsolata font](http://nodnod.net/2009/feb/12/adding-straight-single-and-double-quotes-inconsola/).
+It is captured from a [gnome-terminal](http://library.gnome.org/users/gnome-terminal/stable/index.html.en) using the [dz-version of the awesome Inconsolata font](http://nodnod.net/2009/feb/12/adding-straight-single-and-double-quotes-inconsola/) but you can use any [libvte](http://developer.gnome.org/vte/0.27/) based terminal emulator (and other emulator which support 256colors).
+I recently switched to [sakura](https://launchpad.net/sakura) and my decision was based on [this comparison](http://www.calno.com/evilvte/) and the priming that the gnome-terminal was too slow and too fat.
 
  * **upper left** - Common colors in action: Executables, archives, audio/video stuff, dead links
  * **lower left** - latex directory: tex-trash is in comment style and tex are main files of interest and highlighted
