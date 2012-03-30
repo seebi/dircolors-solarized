@@ -182,7 +182,7 @@ EXEC 01;38;5;64
 *README          01;38;5;245
 *README.txt      01;38;5;245
 *readme.txt      01;38;5;245
-*README.md       01;38;5;245
+*.md             01;38;5;245
 *README.markdown 01;38;5;245
 *ini             01;38;5;245
 *yml             01;38;5;245
