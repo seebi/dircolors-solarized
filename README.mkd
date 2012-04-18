@@ -13,6 +13,10 @@ and we cannot change or add these profiles. Here, you'll find a script that
 will set the palette colors, foreground, background and highlight colors to
 a light or dark color scheme.
 
+There is no uninstall option as that would probably make the scripts a few
+times bigger than what they are today. Code contributions to make an uninstall
+option would be highly appreciated by the users.
+
 Only the foreground, background and highlight colors are different in the light
 and dark color sets, as one of the main ideas behind Ethan Schonoovers work is
 to use the same colors in the palette for both.
@@ -39,8 +43,11 @@ set_dark.sh.
     $ ./install.sh
 
 The _install.sh_ script will guide you through some settings, asking if you
-want the light or dark color scheme, and which of your Gnome Terminal settings
+want the light or dark color scheme, and which of your Gnome Terminal profiles
 you will apply it to.
+
+Make sure you are creating a new profile if you do not want to lose your
+original color profile, as we do not provide any uninstall option.
 
 
 [Solarized homepage]:   http://ethanschoonover.com/solarized
