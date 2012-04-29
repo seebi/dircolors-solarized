@@ -49,6 +49,14 @@ you will apply it to.
 Make sure you are creating a new profile if you do not want to lose your
 original color profile, as we do not provide any uninstall option.
 
+Conflicting background colors in VIM
+------------------------------------
+
+Use the 16 colors terminal option to get VIM to look like GVIM with solarized
+colors.
+
+    set t_Co=16
+
 
 [Solarized homepage]:   http://ethanschoonover.com/solarized
 [Solarized repository]: https://github.com/altercation/solarized
