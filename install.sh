@@ -5,6 +5,16 @@ gconfdir=/apps/gnome-terminal/profiles
 
 echo # This makes the prompts easier to follow (as do other random echos below)
 
+echo "This script will ask you if you want a light or dark color scheme, and"
+echo "which Gnome Terminal profile to overwrite."
+echo
+echo "Please note that there is no uninstall option yet. If you do not wish"
+echo "to overwrite any of your profiles, you should create a new profile"
+echo "before you run this script. However, you can reset your colors to the"
+echo "Gnome default, by running:"
+echo "gconftool-2 --recursive-unset /apps/gnome-terminal"
+echo
+
 ###############################
 ### Select the color scheme ###
 ###############################
@@ -67,7 +77,8 @@ echo    "  Scheme:  $scheme"
 echo -e "  Profile: $profile_name (gconf key: ${profiles[$profile_key]})\n"
 
 #typeset -u confirmation
-echo -n "Is this correct? (YES to continue) "
+echo "Are you sure you want to overwrite the selected profile?"
+echo -n "(YES to continue) "
 read confirmation
 confirmation=$(echo $confirmation | tr '[:lower:]' '[:upper:]')
 if [[ $confirmation != YES ]]; then

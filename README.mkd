@@ -8,14 +8,20 @@ based on colors by Ethan Schoonover <es@ethanschoonover.com>.
 Notes about color settings in Gnome Terminal
 --------------------------------------------
 
-In Gnome terminal there are built-in color profiles, but these are hardcoded
-and we cannot change or add these profiles. Here, you'll find a script that
-will set the palette colors, foreground, background and highlight colors to
-a light or dark color scheme.
+In Gnome terminal, you can add or edit profiles from the menu bar. However,
+this functionality is not easliy available from command line.  Here, you'll
+find a script that will set the palette colors, foreground, background and
+highlight colors to a light or dark color scheme, overwriting a color profile
+you choose.
 
 There is no uninstall option as that would probably make the scripts a few
-times bigger than what they are today. Code contributions to make an uninstall
-option would be highly appreciated by the users.
+times bigger than what they are today. However, if you are completely lost, you
+can reset all profiles to a kind of "factory default", which may be different
+from the profile that came with your distribution:
+`gconftool-2 --recursive-unset /apps/gnome-terminal`
+
+Code contributions to make an uninstall option or adding new profiles through
+the script, will be highly appreciated.
 
 Only the foreground, background and highlight colors are different in the light
 and dark color sets, as one of the main ideas behind Ethan Schonoovers work is
