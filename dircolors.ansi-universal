@@ -88,6 +88,7 @@ TERM screen.linux
 TERM screen-w
 TERM vt100
 TERM xterm
+TERM xterm-new
 TERM xterm-16color
 TERM xterm-256color
 TERM xterm-88color
