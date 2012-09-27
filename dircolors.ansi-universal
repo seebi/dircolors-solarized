@@ -191,6 +191,7 @@ EXEC 01;31  # Unix
 .c 32
 .C 32
 .cc 32
+.cpp 32
 .cxx 32
 .objc 32
 .sh 32
