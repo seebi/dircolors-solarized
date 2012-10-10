@@ -85,8 +85,9 @@ TERM screen
 TERM screen-256color
 TERM screen-256color-bce
 TERM screen-bce
-TERM screen.linux
 TERM screen-w
+TERM screen.linux
+TERM screen.xterm-new
 TERM vt100
 TERM xterm
 TERM xterm-new
