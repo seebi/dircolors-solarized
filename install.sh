@@ -4,8 +4,6 @@ dir=$(dirname $0)
 
 gconfdir=/apps/gnome-terminal/profiles
 
-echo # This makes the prompts easier to follow (as do other random echos below)
-
 echo "This script will ask you if you want a light or dark color scheme, and"
 echo "which Gnome Terminal profile to overwrite."
 echo
@@ -23,7 +21,6 @@ echo
 echo "Please select a color scheme:"
 select scheme in light dark
 do
-  echo
   if [[ -z $scheme ]]
   then
     echo -e "ERROR: Invalid selection -- ABORTING!\n"
@@ -43,6 +40,7 @@ do
   esac
   break
 done
+echo
 
 ########################
 ### Select a profile ###
@@ -70,14 +68,17 @@ do
 done
 profile_key=$(expr ${REPLY} - 1)
 unset IFS
+echo
 
 #########################################################
 ### Show the choices made and prompt for confirmation ###
 #########################################################
 
 echo    "You have selected:"
+echo
 echo    "  Scheme:  $scheme"
 echo -e "  Profile: $profile_name (gconf key: ${profiles[$profile_key]})\n"
+echo
 echo    "Are you sure you want to overwrite the selected profile?"
 echo -n "(YES to continue) "
 
@@ -89,11 +90,11 @@ then
   exit 3
 fi
 
+echo -e "Confirmation received -- applying settings\n"
+
 ########################
 ### Finally... do it ###
 ########################
-
-echo -e "Confirmation received -- applying settings\n"
 
 profile_path=$gconfdir/${profiles[$profile_key]}
 
