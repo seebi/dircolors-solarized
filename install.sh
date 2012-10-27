@@ -56,9 +56,7 @@ echo
 ########################
 
 echo "Please select a Gnome Terminal profile:"
-IFS=','
-names="${visnames[*]}"
-select profile_name in $names
+select profile_name in "${visnames[@]}"
 do
   if [[ -z $profile_name ]]
   then
@@ -68,7 +66,6 @@ do
   profile_key=$(expr ${REPLY} - 1)
   break
 done
-unset IFS
 echo
 
 profile=${profiles[$profile_key]}
