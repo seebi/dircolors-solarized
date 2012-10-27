@@ -83,8 +83,7 @@ echo    "Are you sure you want to overwrite the selected profile?"
 echo -n "(YES to continue) "
 
 read confirmation
-confirmation=$(echo $confirmation | tr '[:lower:]' '[:upper:]')
-if [[ $confirmation != YES ]]
+if [[ $(echo $confirmation | tr '[:lower:]' '[:upper:]') != YES ]]
 then
   echo "ERROR: Confirmation failed -- ABORTING!"
   exit 1
