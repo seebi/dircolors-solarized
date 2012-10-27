@@ -71,6 +71,8 @@ done
 unset IFS
 echo
 
+profile=${profiles[$profile_key]}
+
 #########################################################
 ### Show the choices made and prompt for confirmation ###
 #########################################################
@@ -78,7 +80,7 @@ echo
 echo    "You have selected:"
 echo
 echo    "  Scheme:  $scheme"
-echo    "  Profile: $profile_name (gconf key: ${profiles[$profile_key]})"
+echo    "  Profile: $profile_name (gconf key: $profile)"
 echo
 echo    "Are you sure you want to overwrite the selected profile?"
 echo -n "(YES to continue) "
@@ -97,7 +99,7 @@ echo    "Confirmation received -- applying settings"
 ### Finally... do it ###
 ########################
 
-profile_path=$gconfdir/${profiles[$profile_key]}
+profile_path=$gconfdir/$profile
 
 # set color palette
 gconftool-2 -s -t string $profile_path/palette $(cat $dir/colors/palette)
