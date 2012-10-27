@@ -61,7 +61,7 @@ do
   if [[ -z $profile_name ]]
   then
     echo "ERROR: Invalid selection -- ABORTING!"
-    exit 1
+    exit 3
   fi
   profile_key=$(expr ${REPLY} - 1)
   break
@@ -87,7 +87,7 @@ confirmation=$(echo $confirmation | tr '[:lower:]' '[:upper:]')
 if [[ $confirmation != YES ]]
 then
   echo "ERROR: Confirmation failed -- ABORTING!"
-  exit 3
+  exit 1
 fi
 
 echo    "Confirmation received -- applying settings"
