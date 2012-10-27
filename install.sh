@@ -32,7 +32,7 @@ select scheme in light dark
 do
   if [[ -z $scheme ]]
   then
-    echo -e "ERROR: Invalid selection -- ABORTING!\n"
+    echo "ERROR: Invalid selection -- ABORTING!"
     exit 2
   fi
 
@@ -62,7 +62,7 @@ select profile_name in $names
 do
   if [[ -z $profile_name ]]
   then
-    echo -e "ERROR: Invalid selection -- ABORTING!\n"
+    echo "ERROR: Invalid selection -- ABORTING!"
     exit 1
   fi
   profile_key=$(expr ${REPLY} - 1)
@@ -78,7 +78,7 @@ echo
 echo    "You have selected:"
 echo
 echo    "  Scheme:  $scheme"
-echo -e "  Profile: $profile_name (gconf key: ${profiles[$profile_key]})\n"
+echo    "  Profile: $profile_name (gconf key: ${profiles[$profile_key]})"
 echo
 echo    "Are you sure you want to overwrite the selected profile?"
 echo -n "(YES to continue) "
@@ -87,11 +87,11 @@ read confirmation
 confirmation=$(echo $confirmation | tr '[:lower:]' '[:upper:]')
 if [[ $confirmation != YES ]]
 then
-  echo -e "ERROR: Confirmation failed -- ABORTING!\n"
+  echo "ERROR: Confirmation failed -- ABORTING!"
   exit 3
 fi
 
-echo -e "Confirmation received -- applying settings\n"
+echo    "Confirmation received -- applying settings"
 
 ########################
 ### Finally... do it ###
