@@ -64,9 +64,9 @@ do
     echo -e "ERROR: Invalid selection -- ABORTING!\n"
     exit 1
   fi
+  profile_key=$(expr ${REPLY} - 1)
   break
 done
-profile_key=$(expr ${REPLY} - 1)
 unset IFS
 echo
 
