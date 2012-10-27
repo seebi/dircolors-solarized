@@ -4,6 +4,15 @@ dir=$(dirname $0)
 
 gconfdir=/apps/gnome-terminal/profiles
 
+declare -a profiles
+profiles=($(gconftool-2 -R $gconfdir | grep $gconfdir | cut -d/ -f5 |  cut -d: -f1))
+
+declare -a visnames
+for index in  ${!profiles[@]}
+do
+    visnames[$index]=$(gconftool-2 -g $gconfdir/${profiles[$index]}/visible_name)
+done
+
 echo "This script will ask you if you want a light or dark color scheme, and"
 echo "which Gnome Terminal profile to overwrite."
 echo
@@ -45,14 +54,6 @@ echo
 ########################
 ### Select a profile ###
 ########################
-
-declare -a profiles
-declare -a visnames
-profiles=($(gconftool-2 -R $gconfdir | grep $gconfdir | cut -d/ -f5 |  cut -d: -f1))
-for index in  ${!profiles[@]}
-do
-    visnames[$index]=$(gconftool-2 -g $gconfdir/${profiles[$index]}/visible_name)
-done
 
 echo "Please select a Gnome Terminal profile:"
 IFS=','
