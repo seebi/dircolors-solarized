@@ -58,6 +58,23 @@ interactive_select_scheme() {
   echo
 }
 
+interactive_select_profile() {
+  echo "Please select a Gnome Terminal profile:"
+  select profile_name in "${visnames[@]}"
+  do
+    if [[ -z $profile_name ]]
+    then
+      echo "ERROR: Invalid selection -- ABORTING!"
+      exit 3
+    fi
+    profile_key=$(expr ${REPLY} - 1)
+    break
+  done
+  echo
+
+  profile=${profiles[$profile_key]}
+}
+
 echo "This script will ask you if you want a light or dark color scheme, and"
 echo "which Gnome Terminal profile to overwrite."
 echo
@@ -78,20 +95,7 @@ interactive_select_scheme
 ### Select a profile ###
 ########################
 
-echo "Please select a Gnome Terminal profile:"
-select profile_name in "${visnames[@]}"
-do
-  if [[ -z $profile_name ]]
-  then
-    echo "ERROR: Invalid selection -- ABORTING!"
-    exit 3
-  fi
-  profile_key=$(expr ${REPLY} - 1)
-  break
-done
-echo
-
-profile=${profiles[$profile_key]}
+interactive_select_profile
 
 #########################################################
 ### Show the choices made and prompt for confirmation ###
