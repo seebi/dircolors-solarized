@@ -10,12 +10,6 @@ schemes=(dark light)
 declare -a profiles
 profiles=($(gconftool-2 -R $gconfdir | grep $gconfdir | cut -d/ -f5 |  cut -d: -f1))
 
-declare -a visnames
-for index in  ${!profiles[@]}
-do
-    visnames[$index]=$(gconftool-2 -g $gconfdir/${profiles[$index]}/visible_name)
-done
-
 die() {
   echo $1
   exit ${2:-1}
@@ -97,9 +91,20 @@ interactive_select_scheme() {
 interactive_select_profile() {
   local profile_key
   local profile_name
+  local profile_names
+  local profile_count=$#
+
+  declare -a profile_names
+  while [ $# -gt 0 ]
+  do
+    profile_names[$(($profile_count - $#))]=$(get_profile_name $1)
+    shift
+  done
+
+  set -- "${profile_names[@]}"
 
   echo "Please select a Gnome Terminal profile:"
-  select profile_name in "${visnames[@]}"
+  select profile_name
   do
     if [[ -z $profile_name ]]
     then
@@ -145,7 +150,7 @@ interactive_select_scheme "${schemes[@]}"
 ### Select a profile ###
 ########################
 
-interactive_select_profile
+interactive_select_profile "${profiles[@]}"
 
 #########################################################
 ### Show the choices made and prompt for confirmation ###
