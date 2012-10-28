@@ -18,8 +18,35 @@ die() {
   exit ${2:-1}
 }
 
+get_profile_name() {
+  local profile_name
+
+  # gconftool-2 still return 0 when the key does not exist, but it
+  # does priint error message to STDERR, and command substitution
+  # only gets STDOUT which means nothing at this point.
+  profile_name=$(gconftool-2 -g $gconfdir/$1/visible_name)
+  [[ -z $profile_name ]] && die "$1 is not a valid profile" 3
+  echo $profile_name
+}
+
 set_profile_colors() {
   local profile=$1
+  local scheme=$2
+
+  case $scheme in
+    dark  )
+      local bg_color_file=$dir/colors/base03
+      local fg_color_file=$dir/colors/base0
+      local bd_color_file=$dir/colors/base1
+    ;;
+
+    light )
+      local bg_color_file=$dir/colors/base3
+      local fg_color_file=$dir/colors/base00
+      local bd_color_file=$dir/colors/base01
+    ;;
+  esac
+
   local profile_path=$gconfdir/$profile
 
   # set color palette
@@ -59,24 +86,15 @@ interactive_select_scheme() {
     then
       die "ERROR: Invalid selection -- ABORTING!" 2
     fi
-
-    case $scheme in
-      light ) bg_color_file=$dir/colors/base3
-              fg_color_file=$dir/colors/base00
-              bd_color_file=$dir/colors/base01
-              ;;
-
-      dark  ) bg_color_file=$dir/colors/base03
-              fg_color_file=$dir/colors/base0
-              bd_color_file=$dir/colors/base1
-              ;;
-    esac
     break
   done
   echo
 }
 
 interactive_select_profile() {
+  local profile_key
+  local profile_name
+
   echo "Please select a Gnome Terminal profile:"
   select profile_name in "${visnames[@]}"
   do
@@ -93,10 +111,12 @@ interactive_select_profile() {
 }
 
 interactive_confirm() {
+  local confirmation
+
   echo    "You have selected:"
   echo
   echo    "  Scheme:  $scheme"
-  echo    "  Profile: $profile_name (gconf key: $profile)"
+  echo    "  Profile: $(get_profile_name $profile) ($profile)"
   echo
   echo    "Are you sure you want to overwrite the selected profile?"
   echo -n "(YES to continue) "
@@ -134,4 +154,4 @@ interactive_confirm
 ### Finally... do it ###
 ########################
 
-set_profile_colors $profile
+set_profile_colors $profile $scheme
