@@ -13,6 +13,25 @@ do
     visnames[$index]=$(gconftool-2 -g $gconfdir/${profiles[$index]}/visible_name)
 done
 
+set_profile_colors() {
+  local profile=$1
+  local profile_path=$gconfdir/$profile
+
+  # set color palette
+  gconftool-2 -s -t string $profile_path/palette $(cat $dir/colors/palette)
+
+  # set foreground, background and highlight color
+  gconftool-2 -s -t string $profile_path/bold_color       $(cat $bd_color_file)
+  gconftool-2 -s -t string $profile_path/background_color $(cat $bg_color_file)
+  gconftool-2 -s -t string $profile_path/foreground_color $(cat $fg_color_file)
+
+  # make sure the profile is set to not use theme colors
+  gconftool-2 -s -t bool $profile_path/use_theme_colors false
+
+  # set highlighted color to be different from foreground color
+  gconftool-2 -s -t bool $profile_path/bold_color_same_as_fg false
+}
+
 echo "This script will ask you if you want a light or dark color scheme, and"
 echo "which Gnome Terminal profile to overwrite."
 echo
@@ -95,18 +114,4 @@ echo    "Confirmation received -- applying settings"
 ### Finally... do it ###
 ########################
 
-profile_path=$gconfdir/$profile
-
-# set color palette
-gconftool-2 -s -t string $profile_path/palette $(cat $dir/colors/palette)
-
-# set foreground, background and highlight color
-gconftool-2 -s -t string $profile_path/bold_color       $(cat $bd_color_file)
-gconftool-2 -s -t string $profile_path/background_color $(cat $bg_color_file)
-gconftool-2 -s -t string $profile_path/foreground_color $(cat $fg_color_file)
-
-# make sure the profile is set to not use theme colors
-gconftool-2 -s -t bool $profile_path/use_theme_colors false
-
-# set highlighted color to be different from foreground color
-gconftool-2 -s -t bool $profile_path/bold_color_same_as_fg false
+set_profile_colors $profile
