@@ -139,27 +139,8 @@ interactive_confirm() {
 }
 
 interactive_help
-
-###############################
-### Select the color scheme ###
-###############################
-
 interactive_select_scheme "${schemes[@]}"
-
-########################
-### Select a profile ###
-########################
-
 interactive_select_profile "${profiles[@]}"
-
-#########################################################
-### Show the choices made and prompt for confirmation ###
-#########################################################
-
 interactive_confirm
-
-########################
-### Finally... do it ###
-########################
 
 set_profile_colors $profile $scheme
