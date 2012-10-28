@@ -32,6 +32,32 @@ set_profile_colors() {
   gconftool-2 -s -t bool $profile_path/bold_color_same_as_fg false
 }
 
+interactive_select_scheme() {
+  echo "Please select a color scheme:"
+  select scheme in light dark
+  do
+    if [[ -z $scheme ]]
+    then
+      echo "ERROR: Invalid selection -- ABORTING!"
+      exit 2
+    fi
+
+    case $scheme in
+      light ) bg_color_file=$dir/colors/base3
+              fg_color_file=$dir/colors/base00
+              bd_color_file=$dir/colors/base01
+              ;;
+
+      dark  ) bg_color_file=$dir/colors/base03
+              fg_color_file=$dir/colors/base0
+              bd_color_file=$dir/colors/base1
+              ;;
+    esac
+    break
+  done
+  echo
+}
+
 echo "This script will ask you if you want a light or dark color scheme, and"
 echo "which Gnome Terminal profile to overwrite."
 echo
@@ -46,29 +72,7 @@ echo
 ### Select the color scheme ###
 ###############################
 
-echo "Please select a color scheme:"
-select scheme in light dark
-do
-  if [[ -z $scheme ]]
-  then
-    echo "ERROR: Invalid selection -- ABORTING!"
-    exit 2
-  fi
-
-  case $scheme in
-    light ) bg_color_file=$dir/colors/base3
-            fg_color_file=$dir/colors/base00
-            bd_color_file=$dir/colors/base01
-            ;;
-
-    dark  ) bg_color_file=$dir/colors/base03
-            fg_color_file=$dir/colors/base0
-            bd_color_file=$dir/colors/base1
-            ;;
-  esac
-  break
-done
-echo
+interactive_select_scheme
 
 ########################
 ### Select a profile ###
