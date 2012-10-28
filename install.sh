@@ -4,6 +4,9 @@ dir=$(dirname $0)
 
 gconfdir=/apps/gnome-terminal/profiles
 
+declare -a schemes
+schemes=(dark light)
+
 declare -a profiles
 profiles=($(gconftool-2 -R $gconfdir | grep $gconfdir | cut -d/ -f5 |  cut -d: -f1))
 
@@ -80,7 +83,7 @@ interactive_help() {
 
 interactive_select_scheme() {
   echo "Please select a color scheme:"
-  select scheme in light dark
+  select scheme
   do
     if [[ -z $scheme ]]
     then
@@ -136,7 +139,7 @@ interactive_help
 ### Select the color scheme ###
 ###############################
 
-interactive_select_scheme
+interactive_select_scheme "${schemes[@]}"
 
 ########################
 ### Select a profile ###
