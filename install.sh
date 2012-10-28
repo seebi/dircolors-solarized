@@ -13,6 +13,11 @@ do
     visnames[$index]=$(gconftool-2 -g $gconfdir/${profiles[$index]}/visible_name)
 done
 
+die() {
+  echo $1
+  exit ${2:-1}
+}
+
 set_profile_colors() {
   local profile=$1
   local profile_path=$gconfdir/$profile
@@ -52,8 +57,7 @@ interactive_select_scheme() {
   do
     if [[ -z $scheme ]]
     then
-      echo "ERROR: Invalid selection -- ABORTING!"
-      exit 2
+      die "ERROR: Invalid selection -- ABORTING!" 2
     fi
 
     case $scheme in
@@ -78,8 +82,7 @@ interactive_select_profile() {
   do
     if [[ -z $profile_name ]]
     then
-      echo "ERROR: Invalid selection -- ABORTING!"
-      exit 3
+      die "ERROR: Invalid selection -- ABORTING!" 3
     fi
     profile_key=$(expr ${REPLY} - 1)
     break
@@ -101,8 +104,7 @@ interactive_confirm() {
   read confirmation
   if [[ $(echo $confirmation | tr '[:lower:]' '[:upper:]') != YES ]]
   then
-    echo "ERROR: Confirmation failed -- ABORTING!"
-    exit 1
+    die "ERROR: Confirmation failed -- ABORTING!"
   fi
 
   echo    "Confirmation received -- applying settings"
