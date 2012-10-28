@@ -75,6 +75,25 @@ interactive_select_profile() {
   profile=${profiles[$profile_key]}
 }
 
+interactive_confirm() {
+  echo    "You have selected:"
+  echo
+  echo    "  Scheme:  $scheme"
+  echo    "  Profile: $profile_name (gconf key: $profile)"
+  echo
+  echo    "Are you sure you want to overwrite the selected profile?"
+  echo -n "(YES to continue) "
+
+  read confirmation
+  if [[ $(echo $confirmation | tr '[:lower:]' '[:upper:]') != YES ]]
+  then
+    echo "ERROR: Confirmation failed -- ABORTING!"
+    exit 1
+  fi
+
+  echo    "Confirmation received -- applying settings"
+}
+
 echo "This script will ask you if you want a light or dark color scheme, and"
 echo "which Gnome Terminal profile to overwrite."
 echo
@@ -101,22 +120,7 @@ interactive_select_profile
 ### Show the choices made and prompt for confirmation ###
 #########################################################
 
-echo    "You have selected:"
-echo
-echo    "  Scheme:  $scheme"
-echo    "  Profile: $profile_name (gconf key: $profile)"
-echo
-echo    "Are you sure you want to overwrite the selected profile?"
-echo -n "(YES to continue) "
-
-read confirmation
-if [[ $(echo $confirmation | tr '[:lower:]' '[:upper:]') != YES ]]
-then
-  echo "ERROR: Confirmation failed -- ABORTING!"
-  exit 1
-fi
-
-echo    "Confirmation received -- applying settings"
+interactive_confirm
 
 ########################
 ### Finally... do it ###
