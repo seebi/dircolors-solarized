@@ -52,6 +52,24 @@ The _install.sh_ script will guide you through some settings, asking if you
 want the light or dark color scheme, and which of your Gnome Terminal profiles
 you will apply it to.
 
+By default, it runs in the interactive mode, but it also can be run
+non-interactively, just feed it with the necessary options.
+
+Usage
+
+    install.sh [-h|--help] \
+               (-s <scheme>|--scheme <scheme>|--scheme=<scheme>) \
+               (-p <profile>|--profile <profile>|--profile=<profile>)
+
+Options
+
+    -h, --help
+        Show this information
+    -s, --scheme
+        Color scheme to be used
+    -p, --profile
+        Gnome Terminal profile to overwrite
+
 Make sure you are creating a new profile if you do not want to lose your
 original color profile, as we do not provide any uninstall option.
 

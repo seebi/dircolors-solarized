@@ -15,6 +15,41 @@ die() {
   exit ${2:-1}
 }
 
+in_array() {
+  local e
+  for e in "${@:2}"; do [[ $e == $1 ]] && return 0; done
+  return 1
+}
+
+show_help() {
+  echo
+  echo "Usage"
+  echo
+  echo "    install.sh [-h|--help] \\"
+  echo "               (-s <scheme>|--scheme <scheme>|--scheme=<scheme>) \\"
+  echo "               (-p <profile>|--profile <profile>|--profile=<profile>)"
+  echo
+  echo "Options"
+  echo
+  echo "    -h, --help"
+  echo "        Show this information"
+  echo "    -s, --scheme"
+  echo "        Color scheme to be used"
+  echo "    -p, --profile"
+  echo "        Gnome Terminal profile to overwrite"
+  echo
+}
+
+validate_scheme() {
+  local profile=$1
+  in_array $scheme "${schemes[@]}" || die "$scheme is not a valid scheme" 2
+}
+
+validate_profile() {
+  local profile=$1
+  in_array $profile "${profiles[@]}" || die "$profile is not a valid profile" 3
+}
+
 get_profile_name() {
   local profile_name
 
@@ -72,6 +107,10 @@ interactive_help() {
   echo "Gnome default, by running:"
   echo
   echo "    gconftool-2 --recursive-unset /apps/gnome-terminal"
+  echo
+  echo "By default, it runs in the interactive mode, but it also can be run"
+  echo "non-interactively, just feed it with the necessary options, see"
+  echo "'install.sh --help' for details."
   echo
 }
 
@@ -138,9 +177,42 @@ interactive_confirm() {
   echo    "Confirmation received -- applying settings"
 }
 
-interactive_help
-interactive_select_scheme "${schemes[@]}"
-interactive_select_profile "${profiles[@]}"
-interactive_confirm
+while [ $# -gt 0 ]
+do
+  case $1 in
+    -h | --help )
+      show_help
+      exit 0
+    ;;
+    --scheme=* )
+      scheme=${1#*=}
+    ;;
+    -s | --scheme )
+      scheme=$2
+      shift
+    ;;
+    --profile=* )
+      profile=${1#*=}
+    ;;
+    -p | --profile )
+      profile=$2
+      shift
+    ;;
+  esac
+  shift
+done
 
-set_profile_colors $profile $scheme
+if [[ -z $scheme ]] || [[ -z $profile ]]
+then
+  interactive_help
+  interactive_select_scheme "${schemes[@]}"
+  interactive_select_profile "${profiles[@]}"
+  interactive_confirm
+fi
+
+if [[ -n $scheme ]] && [[ -n $profile ]]
+then
+  validate_scheme $scheme
+  validate_profile $profile
+  set_profile_colors $profile $scheme
+fi
