@@ -32,6 +32,20 @@ set_profile_colors() {
   gconftool-2 -s -t bool $profile_path/bold_color_same_as_fg false
 }
 
+interactive_help() {
+  echo
+  echo "This script will ask you if you want a light or dark color scheme, and"
+  echo "which Gnome Terminal profile to overwrite."
+  echo
+  echo "Please note that there is no uninstall option yet. If you do not wish"
+  echo "to overwrite any of your profiles, you should create a new profile"
+  echo "before you run this script. However, you can reset your colors to the"
+  echo "Gnome default, by running:"
+  echo
+  echo "    gconftool-2 --recursive-unset /apps/gnome-terminal"
+  echo
+}
+
 interactive_select_scheme() {
   echo "Please select a color scheme:"
   select scheme in light dark
@@ -94,15 +108,7 @@ interactive_confirm() {
   echo    "Confirmation received -- applying settings"
 }
 
-echo "This script will ask you if you want a light or dark color scheme, and"
-echo "which Gnome Terminal profile to overwrite."
-echo
-echo "Please note that there is no uninstall option yet. If you do not wish"
-echo "to overwrite any of your profiles, you should create a new profile"
-echo "before you run this script. However, you can reset your colors to the"
-echo "Gnome default, by running:"
-echo "gconftool-2 --recursive-unset /apps/gnome-terminal"
-echo
+interactive_help
 
 ###############################
 ### Select the color scheme ###
