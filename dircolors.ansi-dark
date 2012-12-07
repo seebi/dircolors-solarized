@@ -83,6 +83,7 @@ TERM rxvt-unicode256
 TERM rxvt-unicode-256color
 TERM screen
 TERM screen-256color
+TERM screen-256color-s
 TERM screen-256color-bce
 TERM screen-bce
 TERM screen-w
