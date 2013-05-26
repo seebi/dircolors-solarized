@@ -45,6 +45,15 @@ validate_scheme() {
   in_array $scheme "${schemes[@]}" || die "$scheme is not a valid scheme" 2
 }
 
+createNewProfile() {
+  # b1dcc9dd-5262-4d8d-a863-c897e6d979b9 is totally abitrary, I took my profile id
+  profile_id="b1dcc9dd-5262-4d8d-a863-c897e6d979b9"
+  dconf write $dconfdir/default "'$profile_id'"
+  dconf write $dconfdir/list "['$profile_id']"
+  profile_dir="$dconfdir/:$profile_id"
+  dconf write $profile_dir/visible-name "'Default'"
+}
+
 validate_profile() {
   local profile=$1
   in_array $profile "${profiles[@]}" || die "$profile is not a valid profile" 3
@@ -127,6 +136,30 @@ interactive_select_scheme() {
   echo
 }
 
+interactive_new_profile() {
+  local confirmation
+
+  echo    "No profile found"
+  echo    "You need to create a new default profile to continue. Continue ?"
+  echo -n "(YES to continue) "
+
+  read confirmation
+  if [[ $(echo $confirmation | tr '[:lower:]' '[:upper:]') != YES ]]
+  then
+    die "ERROR: Confirmation failed -- ABORTING!"
+  fi
+
+  echo -e "Profile \"Default\" created\n"
+}
+
+check_empty_profile() {
+  if [ "$profiles" = "" ]
+    then interactive_new_profile
+    createNewProfile
+    profiles=($(dconf list $dconfdir/ | grep ^: | sed 's/\///g'))
+  fi
+}
+
 interactive_select_profile() {
   local profile_key
   local profile_name
@@ -206,6 +239,7 @@ if [[ -z $scheme ]] || [[ -z $profile ]]
 then
   interactive_help
   interactive_select_scheme "${schemes[@]}"
+  check_empty_profile
   interactive_select_profile "${profiles[@]}"
   interactive_confirm
 fi
