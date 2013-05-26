@@ -28,6 +28,7 @@ Clone the [git repository], then run `./solarize`. To change between light and
 dark background, run `./solarize` again.
 
     $ git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+    $ cd gnome-terminal-colors-solarized
     $ ./solarize
 
 Uninstall
