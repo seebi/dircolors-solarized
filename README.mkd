@@ -57,6 +57,15 @@ colors.
 
     set t_Co=16
 
+Problems with Gnome 3.8
+-----------------------
+
+Switch to the Gnome 3.8 branch with the command :
+
+    git checkout gnome-3.8
+
+Then launch the install.sh script.
+
 [Solarized homepage]:   http://ethanschoonover.com/solarized
 [Solarized repository]: https://github.com/altercation/solarized
 [Gnome Terminal Colors Solarized repository]: https://github.com/sigurdga/gnome-terminal-colors-solarized
