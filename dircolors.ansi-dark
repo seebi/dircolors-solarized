@@ -9,9 +9,8 @@
 # with a slight optimization for Solarized Dark.
 #
 # How the colors were selected:
-# - Terminal emulators often have an option typically enabled by default that makes
-#   bold a different color.  It is important to leave this option enabled so that
-#   you can access the entire 16-color Solarized palette, and not just 8 colors.
+# - To use all 16 colors, we make use of the ANSI escape codes for bright colors. These
+#   are 90-97 for foreground and 100-107 for background.
 # - We favor universality over a greater number of colors.  So we limit the number
 #   of colors so that this theme will work out of the box in all terminals,
 #   Solarized or not, dark or light.
@@ -26,10 +25,8 @@
 #   The only difference between the universal scheme and one that's optimized for
 #   dark/light is the color of "unimportant" files, which should blend more with the
 #   background
-# - We note that blue is the hardest color to see on dark bg and yellow is the hardest
-#   color to see on light bg (with blue being particularly bad).  So we choose yellow
+# - We note that yellow is the hardest color to see on light bg.  So we choose yellow
 #   for multimedia files which are usually accessed in a GUI folder browser anyway.
-#   And blue is kept for custom use of this scheme's user.
 # - See table below to see the assignments.
 
 
@@ -120,23 +117,26 @@ EIGHTBIT 1
 #   ~~~~~~~~~~~~~~~       ~~~~~~~~~  ~~~~~                ~~~~~~~~~             ~~~~~~~              ~~~~~~~~
 #   00    none                                            NORMAL, FILE          <SAME>               <SAME>
 #   30    black           base02                                                
-#   01;30 bright black    base03     bg of SolDark                                                                         
+#   90    bright black    base03     bg of SolDark                                                                         
 #   31    red             red                             docs & mm src         <SAME>               <SAME>
-#   01;31 bright red      orange                          EXEC                  <SAME>               <SAME>
+#   91    bright red      orange                          EXEC                  <SAME>               <SAME>
 #   32    green           green                           editable text         <SAME>               <SAME>
-#   01;32 bright green    base01                          unimportant text      <SAME>
+#   92    bright green    base01                          unimportant text      <SAME>
 #   33    yellow          yellow     unclear in light bg  multimedia            <SAME>               <SAME>
-#   01;33 bright yellow   base00     fg of SolLight                             unimportant non-text
+#   93    bright yellow   base00     fg of SolLight                             unimportant non-text
 #   34    blue            blue       unclear in dark bg   user customized       <SAME>               <SAME>
-#   01;34 bright blue     base0      fg in SolDark                                                   unimportant text
+#   94    bright blue     base0      fg in SolDark                                                   unimportant text
 #   35    magenta         magenta                         LINK                  <SAME>               <SAME>
-#   01;35 bright magenta  violet                          archive/compressed    <SAME>               <SAME>
+#   95    bright magenta  violet                          archive/compressed    <SAME>               <SAME>
 #   36    cyan            cyan                            DIR                   <SAME>               <SAME>
-#   01;36 bright cyan     base1                           unimportant non-text                       <SAME>
+#   96    bright cyan     base1                           unimportant non-text                       <SAME>
 #   37    white           base2                                                                      
-#   01;37 bright white    base3      bg in SolLight                                                                        
+#   97    bright white    base3      bg in SolLight                                                                        
 #   05;37;41                         unclear in Putty dark
 
+
+# Baseline formatting
+RESET 0 # reset to "normal" color
 
 ### By file type
 
@@ -145,7 +145,7 @@ NORMAL 00
 # normal file
 FILE 00
 # directory
-DIR 36
+DIR 34
 # symbolic link
 LINK 35
 
@@ -155,6 +155,17 @@ SOCK 35;44
 DOOR 35;44 # Solaris 2.5 and later
 BLK  33;44
 CHR  37;44
+
+# Special directories
+STICKY_OTHER_WRITABLE 90;46 # dir that is sticky and other-writable (+t,o+w)
+OTHER_WRITABLE 90;44 # dir that is other-writable (o+w) and not sticky
+STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
+
+# Special files
+SETUID 37;41 # file that is setuid (u+s)
+SETGID 30;43 # file that is setgid (g+s)
+CAPABILITY 30;41 # file with capability
+MULTIHARDLINK 00 # regular file with more than one link
 
 
 #############################################################################
@@ -167,13 +178,13 @@ ORPHAN  05;37;41
 MISSING 05;37;41
 
 # files with execute permission
-EXEC 01;31  # Unix
-.cmd 01;31  # Win
-.exe 01;31  # Win
-.com 01;31  # Win
-.bat 01;31  # Win
-.reg 01;31  # Win
-.app 01;31  # OSX
+EXEC 91  # Unix
+.cmd 91  # Win
+.exe 91  # Win
+.com 91  # Win
+.bat 91  # Win
+.reg 91  # Win
+.app 91  # OSX
 
 #############################################################################
 ### By extension
@@ -262,6 +273,7 @@ EXEC 01;31  # Unix
 .tga 33
 .tif 33
 .tiff 33
+.webm 33
 .xbm 33
 .xcf 33
 .xpm 33
@@ -278,6 +290,7 @@ EXEC 01;31  # Unix
 .mka 33
 .mp3 33
 .mpa 33
+.mpc 33
 .mpeg 33
 .mpg 33
 .ogg  33
@@ -312,6 +325,12 @@ EXEC 01;31  # Unix
 .vob 33
 .wmv 33
 
+# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
+.axa 33
+.oga 33
+.spx 33
+.xspf 33
+
 ### Misc
 
 # Binary document formats and multimedia source
@@ -328,103 +347,116 @@ EXEC 01;31  # Unix
 .psd 31
 
 # Archives, compressed
-.7z   1;35
-.apk  1;35
-.arj  1;35
-.bin  1;35
-.bz   1;35
-.bz2  1;35
-.cab  1;35  # Win
-.deb  1;35
-.dmg  1;35  # OSX
-.gem  1;35
-.gz   1;35
-.iso  1;35
-.jar  1;35
-.msi  1;35  # Win
-.rar  1;35
-.rpm  1;35
-.tar  1;35
-.tbz  1;35
-.tbz2 1;35
-.tgz  1;35
-.tx   1;35
-.war  1;35
-.xpi  1;35
-.xz   1;35
-.z    1;35
-.Z    1;35
-.zip  1;35
+.7z   95
+.ace  95
+.apk  95
+.arj  95
+.bin  95
+.bz   95
+.bz2  95
+.cab  95  # Win
+.cpio 95
+.deb  95
+.dmg  95  # OSX
+.dz   95
+.ear  95
+.gem  95
+.gz   95
+.iso  95
+.jar  95
+.lz   95
+.lzh  95
+.lzma 95
+.msi  95  # Win
+.rar  95
+.rpm  95
+.rz   95
+.sar  95
+.tar  95
+.taz  95
+.tbz  95
+.tbz2 95
+.tlz  95
+.tgz  95
+.tx   95
+.txz  95
+.tz   95
+.war  95
+.xpi  95
+.xz   95
+.z    95
+.Z    95
+.zip  95
+.zoo  95
 
 # For testing
 .ANSI-30-black 30
-.ANSI-01;30-brblack 01;30
+.ANSI-90-brblack 90
 .ANSI-31-red 31
-.ANSI-01;31-brred 01;31
+.ANSI-91-brred 91
 .ANSI-32-green 32
-.ANSI-01;32-brgreen 01;32
+.ANSI-92-brgreen 92
 .ANSI-33-yellow 33
-.ANSI-01;33-bryellow 01;33
+.ANSI-93-bryellow 93
 .ANSI-34-blue 34
-.ANSI-01;34-brblue 01;34
+.ANSI-94-brblue 94
 .ANSI-35-magenta 35
-.ANSI-01;35-brmagenta 01;35
+.ANSI-95-brmagenta 95
 .ANSI-36-cyan 36
-.ANSI-01;36-brcyan 01;36
+.ANSI-96-brcyan 96
 .ANSI-37-white 37
-.ANSI-01;37-brwhite 01;37
+.ANSI-97-brwhite 97
 
 #############################################################################
 # Your customizations
 
 # Unimportant text files
-# For universal scheme, use brightgreen 01;32
-# For optimal on light bg (but too prominent on dark bg), use white 01;34
-.log 01;32
-*~ 01;32
-*# 01;32
-#.log 01;34
-#*~ 01;34
-#*# 01;34
+# For universal scheme, use brightgreen 92
+# For optimal on light bg (but too prominent on dark bg), use white 94
+.log 92
+*~ 92
+*# 92
+#.log 94
+#*~ 94
+#*# 94
 
 # Unimportant non-text files
-# For universal scheme, use brightcyan 01;36
-# For optimal on dark bg (but too prominent on light bg), change to 01;33
-#.bak 01;36
-#.BAK 01;36
-#.old 01;36
-#.OLD 01;36
-#.org_archive 01;36
-#.off 01;36
-#.OFF 01;36
-#.dist 01;36
-#.DIST 01;36
-#.orig 01;36
-#.ORIG 01;36
-#.swp 01;36
-#.swo 01;36
-#*,v 01;36
-.bak 01;33
-.BAK 01;33
-.old 01;33
-.OLD 01;33
-.org_archive 01;33
-.off 01;33
-.OFF 01;33
-.dist 01;33
-.DIST 01;33
-.orig 01;33
-.ORIG 01;33
-.swp 01;33
-.swo 01;33
-*,v 01;33
+# For universal scheme, use brightcyan 96
+# For optimal on dark bg (but too prominent on light bg), change to 93
+#.bak 96
+#.BAK 96
+#.old 96
+#.OLD 96
+#.org_archive 96
+#.off 96
+#.OFF 96
+#.dist 96
+#.DIST 96
+#.orig 96
+#.ORIG 96
+#.swp 96
+#.swo 96
+#*,v 96
+.bak 93
+.BAK 93
+.old 93
+.OLD 93
+.org_archive 93
+.off 93
+.OFF 93
+.dist 93
+.DIST 93
+.orig 93
+.ORIG 93
+.swp 93
+.swo 93
+*,v 93
 
-# The brightmagenta (Solarized: purple) color is free for you to use for your
-# custom file type
-.gpg 34
-.gpg 34
-.pgp 34
-.asc 34
-.3des 34
-.aes 34
-.enc 34
+# The cyan color is free for you to use for custom file types
+.gpg 36
+.gpg 36
+.pgp 36
+.asc 36
+.3des 36
+.aes 36
+.enc 36
