@@ -145,7 +145,7 @@ NORMAL 00
 # normal file
 FILE 00
 # directory
-DIR 36
+DIR 34
 # symbolic link
 LINK 35
 
