@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dir=$(dirname $0)
-gnomeVersion="$(gnome-terminal --version | cut -d" " -f3)"
+gnomeVersion="$(echo `expr "$(gnome-terminal --version)" : '.*\(.\+[.].\+[.].\+\)$'`)"
 
 # newGnome=1 if the gnome-terminal version >= 3.8
 if [ "$(echo "$gnomeVersion" | cut -d"." -f1)$(echo "$gnomeVersion" | \
