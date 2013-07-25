@@ -27,6 +27,7 @@ TERM console
 TERM cygwin
 TERM dtterm
 TERM eterm-color
+TERM fbterm
 TERM gnome
 TERM gnome-256color
 TERM jfbterm
