@@ -63,6 +63,7 @@ TERM cygwin
 TERM dtterm
 TERM Eterm
 TERM eterm-color
+TERM fbterm
 TERM gnome
 TERM gnome-256color
 TERM jfbterm
@@ -106,7 +107,7 @@ EIGHTBIT 1
 # Below are the color init strings for the basic file types. A color init
 # string consists of one or more of the following numeric codes:
 #
-# Attribute codes: 
+# Attribute codes:
 #   00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
 # Text color codes:
 #   30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
@@ -119,8 +120,8 @@ EIGHTBIT 1
 #   ANSI Color code       Solarized  Notes                Universal             SolDark              SolLight
 #   ~~~~~~~~~~~~~~~       ~~~~~~~~~  ~~~~~                ~~~~~~~~~             ~~~~~~~              ~~~~~~~~
 #   00    none                                            NORMAL, FILE          <SAME>               <SAME>
-#   30    black           base02                                                
-#   01;30 bright black    base03     bg of SolDark                                                                         
+#   30    black           base02
+#   01;30 bright black    base03     bg of SolDark
 #   31    red             red                             docs & mm src         <SAME>               <SAME>
 #   01;31 bright red      orange                          EXEC                  <SAME>               <SAME>
 #   32    green           green                           editable text         <SAME>               <SAME>
@@ -133,8 +134,8 @@ EIGHTBIT 1
 #   01;35 bright magenta  violet                          archive/compressed    <SAME>               <SAME>
 #   36    cyan            cyan                            DIR                   <SAME>               <SAME>
 #   01;36 bright cyan     base1                           unimportant non-text                       <SAME>
-#   37    white           base2                                                                      
-#   01;37 bright white    base3      bg in SolLight                                                                        
+#   37    white           base2
+#   01;37 bright white    base3      bg in SolLight
 #   05;37;41                         unclear in Putty dark
 
 
