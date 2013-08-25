@@ -76,6 +76,7 @@ TERM mach-color
 TERM mlterm
 TERM nxterm
 TERM putty
+TERM putty-256color
 TERM rxvt
 TERM rxvt-256color
 TERM rxvt-cygwin
