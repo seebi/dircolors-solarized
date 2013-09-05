@@ -217,7 +217,7 @@ EXEC 01;31  # Unix
 .shtml 32
 .erb 32
 .haml 32
-.xml 34
+.xml 32
 .rdf 32
 .css 32
 .sass 32
