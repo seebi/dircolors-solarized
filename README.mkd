@@ -31,13 +31,38 @@ dark background, run `./solarize` again.
     $ cd gnome-terminal-colors-solarized
     $ ./solarize
 
+### Gnome 3.8 or higher
+
+If you are running on <b>Linux Mint or Ubuntu</b> with Gnome 3.8 (or higher),
+do not forget to install dconf-cli if you don't already have it :
+
+    $ sudo apt-get install dconf-cli
+
+Only the `install.sh` script is compatible with <b>Gnome-Terminal >= 3.8</b>.
+
+    $ ./install.sh
+    
+And just follow the instructions.
+
 Uninstall
 ---------
 
 Change to another profile in Gnome Terminal, then remove the Solarized profile
 by running:
 
+### Gnome 3.6 or lower
+
     $ rm -r ~/.gconf/apps/gnome-terminal/profiles/Solarized/
+
+### Gnome 3.8 or higher
+
+For Gnome 3.8 or higher, be sure to have the dconf-cli package installed
+if you are running on Ubuntu or Linux Mint and do :
+
+    $ dconf reset -f /org/gnome/terminal/legacy/profiles:/PROFILE_ID"
+
+Replace PROFILE_ID by your profile ID (you can get it in your profile
+configuration in gnome-terminal).
 
 Contributors
 ------------
