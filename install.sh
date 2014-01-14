@@ -74,7 +74,7 @@ create_new_profile() {
 get_uuid() {
   # Print the UUID linked to the profile name sent in parameter
   local profile_name=$1
-  for i in "${!profiles[*]}"
+  for i in ${!profiles[*]}
     do
       if [[ "$(dconf read $dconfdir/${profiles[i]}/visible-name)" == \
           "'$profile_name'" ]]
