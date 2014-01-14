@@ -61,7 +61,7 @@ validate_scheme() {
   in_array $scheme "${schemes[@]}" || die "$scheme is not a valid scheme" 2
 }
 
-createNewProfile() {
+create_new_profile() {
   # b1dcc9dd-5262-4d8d-a863-c897e6d979b9 is totally abitrary, I took my
   # profile id
   profile_id="b1dcc9dd-5262-4d8d-a863-c897e6d979b9"
@@ -69,6 +69,20 @@ createNewProfile() {
   dconf write $dconfdir/list "['$profile_id']"
   profile_dir="$dconfdir/:$profile_id"
   dconf write $profile_dir/visible-name "'Default'"
+}
+
+get_uuid() {
+  # Print the UUID linked to the profile name sent in parameter
+  local profile_name=$1
+  for i in "${!profiles[*]}"
+    do
+      if [[ "$(dconf read $dconfdir/${profiles[i]}/visible-name)" == \
+          "'$profile_name'" ]]
+        then echo "${profiles[i]}"
+        return 0
+      fi
+    done
+  echo "$profile_name"
 }
 
 validate_profile() {
@@ -83,7 +97,8 @@ get_profile_name() {
   # but it does priint error message to STDERR, and command substitution
   # only gets STDOUT which means nothing at this point.
   if [ "$newGnome" = "1" ]
-    then profile_name=$(dconf read $dconfdir/$1/visible-name)
+    then profile_name="$(dconf read $dconfdir/$1/visible-name | sed s/^\'// | \
+        sed s/\'$//)"
   else
     profile_name=$(gconftool-2 -g $gconfdir/$1/visible_name)
   fi
@@ -196,7 +211,7 @@ interactive_new_profile() {
 check_empty_profile() {
   if [ "$profiles" = "" ]
     then interactive_new_profile
-    createNewProfile
+    create_new_profile
     profiles=($(dconf list $dconfdir/ | grep ^: | sed 's/\///g'))
   fi
 }
@@ -290,6 +305,9 @@ fi
 if [[ -n $scheme ]] && [[ -n $profile ]]
 then
   validate_scheme $scheme
+  if [ "$newGnome" = "1" ]
+    then profile="$(get_uuid $profile)"
+  fi
   validate_profile $profile
   set_profile_colors $profile $scheme
 fi
