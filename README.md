@@ -22,7 +22,7 @@ homebrew (coreutils).
   * [Theme #1: "256dark"](#256dark)
   * [Theme #2: "ansi-\*"](#ansi)
 * [Installation](#installation)
-* [Understanding Solarized Colors in Terminals](#understanding)
+* [Understanding Solarized Colors in Terminals](#understanding-solarized-colors-in-terminals)
 
 <h2 id="repositories">Repositories</h2>
 
