@@ -64,6 +64,15 @@ if you are running on Ubuntu or Linux Mint and do :
 Replace PROFILE_ID by your profile ID (you can get it in your profile
 configuration in gnome-terminal).
 
+Development TODO
+----------------
+
+* Let the scripts set dircolors
+* Merge dconf and gconf versions
+* Check dircolors or Xresources for conflicting colors with background
+
+This is the prioritized order. If you know that dircolors files are handles differently in your OS than what is normal in Ubuntu/Debian/Arch/++, please let us know. Suggestions or patches are very welcome.
+
 Contributors
 ------------
 
