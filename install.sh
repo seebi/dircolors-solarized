@@ -168,7 +168,7 @@ copy_dicolors() {
   if [ "$1" != 1 ]
     then return
   elif [ -f "$DIRCOLORS_DIR/dircolors" ]
-    then mv "$DIRCOLORS_DIR/dircolors" "$DIRCOLORS_DIR/dircolors.old}"
+    then mv "$DIRCOLORS_DIR/dircolors" "$DIRCOLORS_DIR/dircolors.old"
     echo "$DIRCOLORS_DIR/dircolors already exists, moving it as dircolors.old"
   fi
   cp "$DIRCOLORS_SOLARIZED/dircolors" "$DIRCOLORS_DIR/dircolors"
@@ -268,11 +268,13 @@ check_empty_profile() {
 }
 
 check_dircolors() {
-  [ "$(ls -A $DIRCOLORS_DIR)" ] && nonempty=false || nonempty=true
-  if $nonempty
-    then copy_dicolors "$(interactive_dircolors)"
+  nonempty=false
+  if [ -d "$DIRCOLORS_DIR" ]
+    then  [ "$(ls -A $DIRCOLORS_DIR)" ] && nonempty=true || nonempty=false
   fi
-  interactive_dircolors
+  if [ $nonempty = true ]
+    then interactive_dircolors
+  fi
   return $(! $nonempty)
 }
 
