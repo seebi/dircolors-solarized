@@ -29,6 +29,7 @@ dark background, run `./solarize` again.
 
     $ git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
     $ cd gnome-terminal-colors-solarized
+    $ git submodule update --init
     $ ./solarize
 
 ### Gnome 3.8 or higher
@@ -41,7 +42,7 @@ do not forget to install dconf-cli if you don't already have it :
 Only the `install.sh` script is compatible with <b>Gnome-Terminal >= 3.8</b>.
 
     $ ./install.sh
-    
+
 And just follow the instructions.
 
 Uninstall
