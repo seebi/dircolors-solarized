@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
+DIRCOLORS_DIR="$(echo ~/.dir_colors)"
+DIRCOLORS_SOLARIZED="ls-colors-solarized"
+
 dir=$(dirname $0)
 gnomeVersion="$(expr "$(gnome-terminal --version)" : '.* \(.*[.].*[.].*\)$')"
+dircolors_checked=false
 
 # newGnome=1 if the gnome-terminal version >= 3.8
 if [[ ("$(echo "$gnomeVersion" | cut -d"." -f1)" = "3" && \
@@ -160,6 +164,25 @@ set_profile_colors() {
   fi
 }
 
+copy_dicolors() {
+  if [ "$1" != 1 ]
+    then return
+  elif [ -f "$DIRCOLORS_DIR/dircolors" ]
+    then mv "$DIRCOLORS_DIR/dircolors" "$DIRCOLORS_DIR/dircolors.old}"
+    echo "$DIRCOLORS_DIR/dircolors already exists, moving it as dircolors.old"
+  fi
+  cp "$DIRCOLORS_SOLARIZED/dircolors" "$DIRCOLORS_DIR/dircolors"
+  echo
+  echo "Segurda solarized dircolors copied as $DIRCOLORS_DIR/dircolors."
+  echo
+  echo "Add \"eval \`dircolors /path/to/dircolorsdb\`\" in your in your shell "
+  echo "configuration file (.bashrc, .zshrc, etc...) to use the new dircolors."
+  echo
+  echo "Do not forget to remove the old dircolors in your shell configuration"
+  echo "file if it was named differently than \"dircolors\"."
+  echo
+}
+
 interactive_help() {
   echo
   echo "This script will ask you if you want a light or dark color scheme, and"
@@ -177,6 +200,34 @@ interactive_help() {
   echo "non-interactively, just feed it with the necessary options, see"
   echo "'install.sh --help' for details."
   echo
+}
+
+interactive_dircolors() {
+  noselect=true
+  while $noselect
+  do
+    echo
+    echo "A dircolors already exists, but can be incompatible with the solarized"
+    echo "color scheme causing some colors problems when doing a \"ls\"."
+    echo
+    echo "1) Replace the actual dircolors by the Sigurdga' ls-colors-solarized"
+    echo "   (the actual dircolors will be keeped as backup)"
+    echo "2) [DEFAULT] I am awared about this potentiall problem and will check"
+    echo "   my dircolors (default path: ~/.dir_colors/dircolors) in case of"
+    echo "   conflict."
+    echo
+    read -p "Enter your choice : [2] " selection
+    selection=${selection:-2}
+
+    if [ "$selection" -gt 2 -o "$selection" -lt 1 ]
+      then echo "$selection is not a valid entry. Please Restart"
+      echo
+      noselect=true
+    else
+      noselect=false
+    fi
+  done
+  copy_dicolors $selection
 }
 
 interactive_select_scheme() {
@@ -214,6 +265,20 @@ check_empty_profile() {
     create_new_profile
     profiles=($(dconf list $dconfdir/ | grep ^: | sed 's/\///g'))
   fi
+}
+
+check_dircolors() {
+  [ "$(ls -A $DIRCOLORS_DIR)" ] && nonempty=false || nonempty=true
+  if $nonempty
+    then copy_dicolors "$(interactive_dircolors)"
+  fi
+  interactive_dircolors
+  return $(! $nonempty)
+}
+
+warning_message_dircolors() {
+  echo    "If there is any problem with the colors when doing a \"ls\", please"
+  echo    "check your dircolors."
 }
 
 interactive_select_profile() {
@@ -310,4 +375,5 @@ then
   fi
   validate_profile $profile
   set_profile_colors $profile $scheme
+  check_dircolors || warning_message_dircolors
 fi
