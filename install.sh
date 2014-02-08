@@ -278,6 +278,19 @@ check_dircolors() {
   return $(! $nonempty)
 }
 
+check_submodule() {
+  submodule=false
+  if [ -d "$DIRCOLORS_SOLARIZED" ]
+  then [ "$(ls -A $DIRCOLORS_SOLARIZED)" ] && submodule=true || submodule=false
+  fi
+
+  if [ "$submodule" = false ]
+  then echo -n "Submodules not initialized. Please run "
+    echo "\"git submodule update --init\" and relaunch the installation script."
+    exit
+  fi
+}
+
 warning_message_dircolors() {
   echo    "If there is any problem with the colors when doing a \"ls\", please"
   echo    "check your dircolors."
@@ -358,6 +371,7 @@ do
   shift
 done
 
+check_submodule
 if [[ -z $scheme ]] || [[ -z $profile ]]
 then
   interactive_help
