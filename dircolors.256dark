@@ -56,7 +56,9 @@ TERM screen-bce
 TERM screen-w
 TERM screen.linux
 TERM st
+TERM st-meta
 TERM st-256color
+TERM st-meta-256color
 TERM vt100
 TERM xterm
 TERM xterm-16color
