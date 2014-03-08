@@ -174,8 +174,9 @@ dl_dircolors() {
       "$DIRCOLORS_DL_ADRESS/dircolors.ansi-$scheme""
   valid=$?
   if [ ! "$valid" == "0" -o ! -e "$DIRCOLORS_SOLARIZED/dircolors" ]
-    then echo "Download failed, dircolors will not be copied but you install"
-    echo "it from the official repository : $DIRCOLORS_REPO_ADRESS"
+    then echo -e "Download failed, dircolors will not be copied but you "
+    echo -en "install it from the \nofficial repository : "
+    echo "$DIRCOLORS_REPO_ADRESS"
     return 1
   fi
   return 0
@@ -189,7 +190,7 @@ copy_dicolors() {
     dl_ok=$?
     then if [ $dl_ok ]
       then mv "$DIRCOLORS_DIR/dircolors" "$DIRCOLORS_DIR/dircolors.old"
-      echo "$DIRCOLORS_DIR/dircolors already exists, moving it as"
+      echo -e "$DIRCOLORS_DIR/dircolors already exists, moving it as"
       echo "dircolors.old"
     fi
   fi
@@ -197,30 +198,31 @@ copy_dicolors() {
   echo
   echo "The new dircolors is copied as $DIRCOLORS_DIR/dircolors."
   echo
-  echo "Add \"eval \`dircolors /path/to/dircolorsdb\`\" in your in your shell "
+  echo "Add \"eval \`dircolors /path/to/dircolorsdb\`\" in your in your shell"
   echo "configuration file (.bashrc, .zshrc, etc...) to use the new dircolors."
   echo
-  echo "Do not forget to remove the old dircolors in your shell configuration"
-  echo "file if it was named differently than \"dircolors\"."
+  echo -en "Do not forget to remove the old dircolors in your shell "
+  echo -en "configuration file if \nit was named differently than "
+  echo -en "\"dircolors\".\n"
   echo
 }
 
 interactive_help() {
   echo
-  echo "This script will ask you if you want a light or dark color scheme, and"
-  echo "which Gnome Terminal profile to overwrite."
+  echo -en "This script will ask you if you want a light or dark color scheme,"
+  echo -en "and which \nGnome Terminal profile to overwrite.\n"
   echo
-  echo "Please note that there is no uninstall option yet. If you do not wish"
-  echo "to overwrite any of your profiles, you should create a new profile"
-  echo "before you run this script. However, you can reset your colors to the"
-  echo "Gnome default, by running:"
+  echo -en "Please note that there is no uninstall option yet. If you do not "
+  echo -en "wish to \noverwrite any of your profiles, you should create a new "
+  echo -en "profile before you run \nthis script. However, you can reset your "
+  echo -en "colors to the Gnome default, by\n running:\n"
   echo
   echo "    Gnome >= 3.8 dconf reset -f /org/gnome/terminal/legacy/profiles:/"
   echo "    Gnome < 3.8 gconftool-2 --recursive-unset /apps/gnome-terminal"
   echo
-  echo "By default, it runs in the interactive mode, but it also can be run"
-  echo "non-interactively, just feed it with the necessary options, see"
-  echo "'install.sh --help' for details."
+  echo -en "By default, it runs in the interactive mode, but it also can be "
+  echo -en "run \nnon-interactively, just feed it with the necessary options, "
+  echo -en "see \n'install.sh --help' for details.\n"
   echo
 }
 
@@ -229,17 +231,18 @@ interactive_dircolors() {
   while $noselect
   do
     echo
-    echo "A dircolors already exists, but can be incompatible with the"
-    echo "solarized color scheme causing some colors problems when doing a"
-    echo "\"ls\"."
+    echo -en "A dircolors already exists, but can be incompatible with the"
+    echo -en "solarized color \nscheme causing some colors problems when doing"
+    echo -en " a \"ls\".\n"
     echo -e "\n"
-    echo "1) Replace the actual dircolors by the seebi' dircolors-solarized :"
-    echo "   https://github.com/seebi/dircolors-solarized (the actual "
-    echo "   dircolors will be keeped as backup)"
+    echo -en "1) Replace the actual dircolors by the seebi' "
+    echo -en "dircolors-solarized :\n"
+    echo -en "   https://github.com/seebi/dircolors-solarized (the actual "
+    echo -en "dircolors will be \nkeeped as backup).\n"
     echo
-    echo "2) [DEFAULT] I am awared about this potentiall problem and will"
-    echo "   check my dircolors (default path: ~/.dir_colors/dircolors) in"
-    echo "   case of conflict."
+    echo -en "2) [DEFAULT] I am awared about this potentiall problem and will"
+    echo -en "check my \n   dircolors (default path: ~/.dir_colors/dircolors) "
+    echo -en "in case of conflict.\n"
     echo -e "\n"
     read -p "Enter your choice : [2] " selection
     selection=${selection:-2}
@@ -304,8 +307,8 @@ check_dircolors() {
 }
 
 warning_message_dircolors() {
-  echo    "If there is any problem with the colors when doing a \"ls\", please"
-  echo    "check your dircolors."
+  echo -en "If there is any problem with the colors when doing a \"ls\", "
+  echo -en "please check your \ndircolors.\n"
 }
 
 interactive_select_profile() {
