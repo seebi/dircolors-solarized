@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 DIRCOLORS_DIR="$(echo ~/.dir_colors)"
-DIRCOLORS_SOLARIZED="ls-colors-solarized"
+DIRCOLORS_SOLARIZED="$(pwd)"
+DIRCOLORS_REPO_ADRESS="https://github.com/seebi/dircolors-solarized"
+DIRCOLORS_DL_ADRESS="https://raw.github.com/seebi/dircolors-solarized/master/"
 
 dir=$(dirname $0)
 gnomeVersion="$(expr "$(gnome-terminal --version)" : '.* \(.*[.].*[.].*\)$')"
@@ -152,9 +154,11 @@ set_profile_colors() {
     gconftool-2 -s -t string $profile_path/palette $(cat $dir/colors/palette)
 
     # set foreground, background and highlight color
-    gconftool-2 -s -t string $profile_path/bold_color       $(cat $bd_color_file)
-    gconftool-2 -s -t string $profile_path/background_color $(cat $bg_color_file)
-    gconftool-2 -s -t string $profile_path/foreground_color $(cat $fg_color_file)
+    gconftool-2 -s -t string $profile_path/bold_color $(cat $bd_color_file)
+    gconftool-2 -s -t string $profile_path/background_color \
+        $(cat $bg_color_file)
+    gconftool-2 -s -t string $profile_path/foreground_color \
+        $(cat $fg_color_file)
 
     # make sure the profile is set to not use theme colors
     gconftool-2 -s -t bool $profile_path/use_theme_colors false
@@ -164,16 +168,34 @@ set_profile_colors() {
   fi
 }
 
+dl_dircolors() {
+  echo
+  eval "wget -O "$DIRCOLORS_SOLARIZED/dircolors" \
+      "$DIRCOLORS_DL_ADRESS/dircolors.ansi-$scheme""
+  valid=$?
+  if [ ! "$valid" == "0" -o ! -e "$DIRCOLORS_SOLARIZED/dircolors" ]
+    then echo "Download failed, dircolors will not be copied but you install"
+    echo "it from the official repository : $DIRCOLORS_REPO_ADRESS"
+    return 1
+  fi
+  return 0
+}
+
 copy_dicolors() {
   if [ "$1" != 1 ]
     then return
   elif [ -f "$DIRCOLORS_DIR/dircolors" ]
-    then mv "$DIRCOLORS_DIR/dircolors" "$DIRCOLORS_DIR/dircolors.old"
-    echo "$DIRCOLORS_DIR/dircolors already exists, moving it as dircolors.old"
+    eval dl_dircolors
+    dl_ok=$?
+    then if [ $dl_ok ]
+      then mv "$DIRCOLORS_DIR/dircolors" "$DIRCOLORS_DIR/dircolors.old"
+      echo "$DIRCOLORS_DIR/dircolors already exists, moving it as"
+      echo "dircolors.old"
+    fi
   fi
   cp "$DIRCOLORS_SOLARIZED/dircolors" "$DIRCOLORS_DIR/dircolors"
   echo
-  echo "Segurda solarized dircolors copied as $DIRCOLORS_DIR/dircolors."
+  echo "The new dircolors is copied as $DIRCOLORS_DIR/dircolors."
   echo
   echo "Add \"eval \`dircolors /path/to/dircolorsdb\`\" in your in your shell "
   echo "configuration file (.bashrc, .zshrc, etc...) to use the new dircolors."
@@ -207,15 +229,18 @@ interactive_dircolors() {
   while $noselect
   do
     echo
-    echo "A dircolors already exists, but can be incompatible with the solarized"
-    echo "color scheme causing some colors problems when doing a \"ls\"."
+    echo "A dircolors already exists, but can be incompatible with the"
+    echo "solarized color scheme causing some colors problems when doing a"
+    echo "\"ls\"."
+    echo -e "\n"
+    echo "1) Replace the actual dircolors by the seebi' dircolors-solarized :"
+    echo "   https://github.com/seebi/dircolors-solarized (the actual "
+    echo "   dircolors will be keeped as backup)"
     echo
-    echo "1) Replace the actual dircolors by the Sigurdga' ls-colors-solarized"
-    echo "   (the actual dircolors will be keeped as backup)"
-    echo "2) [DEFAULT] I am awared about this potentiall problem and will check"
-    echo "   my dircolors (default path: ~/.dir_colors/dircolors) in case of"
-    echo "   conflict."
-    echo
+    echo "2) [DEFAULT] I am awared about this potentiall problem and will"
+    echo "   check my dircolors (default path: ~/.dir_colors/dircolors) in"
+    echo "   case of conflict."
+    echo -e "\n"
     read -p "Enter your choice : [2] " selection
     selection=${selection:-2}
 
