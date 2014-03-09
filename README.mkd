@@ -56,11 +56,6 @@ Be sure to have the dconf-cli package installed and do:
 Replace PROFILE_ID by your profile ID (you can get it in your profile
 configuration in gnome-terminal).
 
-Development TODO
-----------------
-
-* Let the scripts set dircolors
-
 Contributors
 ------------
 
