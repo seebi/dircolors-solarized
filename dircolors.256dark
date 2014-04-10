@@ -180,7 +180,7 @@ EXEC 00;38;5;64
 .CR2    00;38;5;136
 .ico    00;38;5;136
 
-# Files of special interest (base1 + bold)
+# Files of special interest (base1)
 .tex             00;38;5;245
 .rdf             00;38;5;245
 .owl             00;38;5;245
