@@ -448,3 +448,4 @@ EXEC 01;31  # Unix
 .3des 34
 .aes 34
 .enc 34
+.sqlite 34
