@@ -401,7 +401,7 @@ if [[ -n $scheme ]] && [[ -n $profile ]]
 then
   validate_scheme $scheme
   if [ "$newGnome" = "1" ]
-    then profile="$(get_uuid $profile)"
+    then profile="$(get_uuid "$profile")"
   fi
   validate_profile $profile
   set_profile_colors $profile $scheme
