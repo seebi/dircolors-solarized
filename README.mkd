@@ -60,7 +60,7 @@ Contributors
 ------------
 
 * Sigurd Gartmann <sigurdga@sigurdga.no>
-* Anthony Ruhier </Anthony25>
+* Anthony Ruhier <anthony.ruhier@gmail.com>
 * Paul Thomson <captbunzo@gmail.com>
 * Techlive Zheng <techlivezheng@gmail.com>
 * Daniel Graña <dangra@gmail.com>
@@ -75,6 +75,20 @@ Use the 16 colors terminal option to get VIM to look like GVIM with solarized
 colors.
 
     set t_Co=16
+
+Mate terminal compatibility
+---------------------------
+
+This script has to stay simple, and including Mate compatibility is not what I
+want, even if there is not a lot of changes between Mate-Terminal and
+Gnome-Terminal. Moreover, I do not use Mate so I would only test the script
+quickly in a virtual machine, and it is not the main platform target.
+
+However, I invite anybody to fork this script and to include the modifications
+for Mate (michel-slm already did the job in the pull-request #39, many thanks
+to him !). If it is maintained (like pulling the new commits from this repo
+and following the Mate Terminal changes if a new version release the script), I
+will quote the forked repo in this readme.
 
 [Solarized homepage]:   http://ethanschoonover.com/solarized
 [Solarized repository]: https://github.com/altercation/solarized
