@@ -68,9 +68,7 @@ validate_scheme() {
 }
 
 create_new_profile() {
-  # b1dcc9dd-5262-4d8d-a863-c897e6d979b9 is totally abitrary, I took my
-  # profile id
-  profile_id="b1dcc9dd-5262-4d8d-a863-c897e6d979b9"
+  profile_id="$(uuidgen)"
   dconf write $dconfdir/default "'$profile_id'"
   dconf write $dconfdir/list "['$profile_id']"
   profile_dir="$dconfdir/:$profile_id"
