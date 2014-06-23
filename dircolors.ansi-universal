@@ -60,6 +60,8 @@ TERM cons25
 TERM console
 TERM cygwin
 TERM dtterm
+TERM dvtm
+TERM dvtm-256color
 TERM Eterm
 TERM eterm-color
 TERM fbterm
