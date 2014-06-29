@@ -87,8 +87,8 @@ quickly in a virtual machine, and it is not the main platform target.
 However, I invite anybody to fork this script and to include the modifications
 for Mate (michel-slm already did the job in the pull-request #39, many thanks
 to him !). If it is maintained (like pulling the new commits from this repo
-and following the Mate Terminal changes if a new version release the script), I
-will quote the forked repo in this readme.
+and following the Mate Terminal changes), I will quote the forked repo in this
+readme.
 
 [Solarized homepage]:   http://ethanschoonover.com/solarized
 [Solarized repository]: https://github.com/altercation/solarized
