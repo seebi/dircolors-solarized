@@ -273,6 +273,7 @@ EXEC 01;31  # Unix
 .pdf 33
 .pgm 33
 .png 33
+.PNG 33
 .ppm 33
 .pps 33
 .ppsx 33
