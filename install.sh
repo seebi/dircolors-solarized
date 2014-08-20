@@ -173,7 +173,7 @@ dl_dircolors() {
   valid=$?
   if [ ! "$valid" == "0" -o ! -e "$DIRCOLORS_SOLARIZED/dircolors" ]
     then echo -e "Download failed, dircolors will not be copied but you "
-    echo -en "install it from the \nofficial repository : "
+    echo -en "install it from the official repository : "
     echo "$DIRCOLORS_REPO_ADRESS"
     return 1
   fi
@@ -196,31 +196,31 @@ copy_dicolors() {
   echo
   echo "The new dircolors is copied as $DIRCOLORS_DIR/dircolors."
   echo
-  echo "Add \"eval \`dircolors /path/to/dircolorsdb\`\" in your in your shell"
+  echo "Add \"eval \`dircolors /path/to/dircolorsdb\`\" in your in your shell "
   echo "configuration file (.bashrc, .zshrc, etc...) to use the new dircolors."
   echo
   echo -en "Do not forget to remove the old dircolors in your shell "
-  echo -en "configuration file if \nit was named differently than "
+  echo -en "configuration file if it was named differently than "
   echo -en "\"dircolors\".\n"
   echo
 }
 
 interactive_help() {
   echo
-  echo -en "This script will ask you if you want a light or dark color scheme,"
-  echo -en "and which \nGnome Terminal profile to overwrite.\n"
+  echo -en "This script will ask you if you want a light or dark color "
+  echo -en "scheme, and which Gnome Terminal profile to overwrite.\n"
   echo
   echo -en "Please note that there is no uninstall option yet. If you do not "
-  echo -en "wish to \noverwrite any of your profiles, you should create a new "
-  echo -en "profile before you run \nthis script. However, you can reset your "
-  echo -en "colors to the Gnome default, by\n running:\n"
+  echo -en "wish to overwrite any of your profiles, you should create a new "
+  echo -en "profile before you run this script. However, you can reset your "
+  echo -en "colors to the Gnome default, by running:\n"
   echo
   echo "    Gnome >= 3.8 dconf reset -f /org/gnome/terminal/legacy/profiles:/"
   echo "    Gnome < 3.8 gconftool-2 --recursive-unset /apps/gnome-terminal"
   echo
   echo -en "By default, it runs in the interactive mode, but it also can be "
-  echo -en "run \nnon-interactively, just feed it with the necessary options, "
-  echo -en "see \n'install.sh --help' for details.\n"
+  echo -en "run non-interactively, just feed it with the necessary options, "
+  echo -en "see 'install.sh --help' for details.\n"
   echo
 }
 
@@ -229,9 +229,9 @@ interactive_dircolors() {
   while $noselect
   do
     echo
-    echo -en "A dircolors already exists, but can be incompatible with the"
-    echo -en "solarized color \nscheme causing some colors problems when doing"
-    echo -en " a \"ls\".\n"
+    echo -en "A dircolors already exists, but can be incompatible with the "
+    echo -en "solarized color scheme causing some colors problems when doing "
+    echo -en "a \"ls\".\n"
     echo -e "\n"
     echo -en "1) Replace the actual dircolors by the seebi' "
     echo -en "dircolors-solarized :\n"
@@ -306,7 +306,7 @@ check_dircolors() {
 
 warning_message_dircolors() {
   echo -en "If there is any problem with the colors when doing a \"ls\", "
-  echo -en "please check your \ndircolors.\n"
+  echo -en "please check your dircolors.\n"
 }
 
 interactive_select_profile() {
