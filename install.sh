@@ -199,8 +199,8 @@ copy_dicolors() {
 
 interactive_help() {
   echo
-  echo -en "This script will ask you if you want a light or dark color "
-  echo -en "scheme, and which Gnome Terminal profile to overwrite.\n"
+  echo -en "This script will ask you which color scheme you want, and which "
+  echo -en "Gnome Terminal profile to overwrite.\n"
   echo
   echo -en "Please note that there is no uninstall option yet. If you do not "
   echo -en "wish to overwrite any of your profiles, you should create a new "
