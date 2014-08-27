@@ -101,7 +101,7 @@ TERM screen.xterm-new
 TERM st
 TERM st-meta
 TERM st-256color
-TERm st-meta-256color
+TERM st-meta-256color
 TERM vt100
 TERM xterm
 TERM xterm-new
