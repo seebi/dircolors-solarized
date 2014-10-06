@@ -10,12 +10,11 @@ get_default_profile() {
     profile_name="$(dconf read $dconfdir/":"$profile_id/visible-name | \
         sed s/^\'// | sed s/\'$//)"
   else
-    profile_id="$(gconftool-2 -g \
+    profile_name="$(gconftool-2 -g \
         /apps/gnome-terminal/global/default_profile)"
-    profile_name=$(gconftool-2 -g $gconfdir/$profile_id/visible_name)
   fi
   echo $profile_name
 }
 
-PROFILE=${2:-$(get_default_profile)}
+PROFILE=${2:-"$(get_default_profile)"}
 $dir/install.sh -s $1 -p "$PROFILE"
