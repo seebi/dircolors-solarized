@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-dir=$(dirname $0)
+dir=$(dirname "$0")
 
 declare -a schemes
 schemes=($(cd $dir/colors && echo * && cd - > /dev/null))
