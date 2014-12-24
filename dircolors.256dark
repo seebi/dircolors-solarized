@@ -211,6 +211,7 @@ EXEC 00;38;5;64
 .cpp             00;38;5;245
 .cc              00;38;5;245
 .sqlite          00;38;5;245
+*Dockerfile      00;38;5;245
 
 # "unimportant" files as logs and backups (base01)
 .log        00;38;5;240
