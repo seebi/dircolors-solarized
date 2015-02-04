@@ -297,6 +297,7 @@ EXEC 01;31  # Unix
 .aac 33
 .au  33
 .flac 33
+.m4a 33
 .mid 33
 .midi 33
 .mka 33
