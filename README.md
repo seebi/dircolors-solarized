@@ -180,7 +180,7 @@ To activate the theme for all future shell sessions, copy or link that file to
 or `~/.zshrc` (for zsh).
 
 For Ubuntu 14.04 it is sufficient to copy or link database file to `~/.dircolors`.
-Statement in `~/.bashrc` will take about triggering eval command.
+Statement in `~/.bashrc` will take care about triggering eval command.
 
 ### Additional Instructions for 256-color Solarized Themes, e.g. "256dark"
 
