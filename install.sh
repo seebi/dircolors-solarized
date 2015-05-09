@@ -157,10 +157,23 @@ do
   shift
 done
 
-if [[ -z $scheme ]] || [[ -z $profile ]]
+if [[ -z "$scheme" ]] || [[ -z "$profile" ]]
 then
   interactive_help
+fi
+
+if [[ -n "$scheme" ]]
+  then validate_scheme $scheme
+else
   interactive_select_scheme "${schemes[@]}"
+fi
+
+if [[ -n "$profile" ]]
+  then if [ "$newGnome" = "1" ]
+    then profile="$(get_uuid "$profile")"
+  fi
+  validate_profile $profile
+else
   if [ "$newGnome" = "1" ]
     then check_empty_profile
   fi
@@ -168,13 +181,5 @@ then
   interactive_confirm
 fi
 
-if [[ -n $scheme ]] && [[ -n $profile ]]
-then
-  validate_scheme $scheme
-  if [ "$newGnome" = "1" ]
-    then profile="$(get_uuid "$profile")"
-  fi
-  validate_profile $profile
-  set_profile_colors $profile $scheme
-  check_dircolors || warning_message_dircolors
-fi
+set_profile_colors $profile $scheme
+check_dircolors || warning_message_dircolors
