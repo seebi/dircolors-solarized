@@ -23,3 +23,10 @@ in_array() {
   return 1
 }
 
+to_gconf() {
+    tr '\n' \: | sed 's#:$#\n#'
+}
+
+to_dconf() {
+    tr '\n' '~' | sed -e "s#~\$#']\n#" -e "s#~#', '#g" -e "s#^#['#"
+}
