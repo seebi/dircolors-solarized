@@ -214,6 +214,7 @@ EXEC 01;31  # Unix
 .cxx 32
 .objc 32
 .sh 32
+.bash 32
 .csh 32
 .zsh 32
 .el 32
@@ -344,12 +345,18 @@ EXEC 01;31  # Unix
 .doc 31
 .docx 31
 .rtf 31
+.odt 31
 .dot 31
 .dotx 31
+.ott 31
 .xls 31
 .xlsx 31
+.ods 31
+.ots 31
 .ppt 31
 .pptx 31
+.odp 31
+.otp 31
 .fla 31
 .psd 31
 
