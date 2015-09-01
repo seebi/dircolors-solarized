@@ -97,6 +97,7 @@ TERM screen-256color-bce-s
 TERM screen-256color-italic
 TERM screen-bce
 TERM screen-w
+TERM screen.xterm-256color
 TERM screen.linux
 TERM screen.xterm-new
 TERM st
