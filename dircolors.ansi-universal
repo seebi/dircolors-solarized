@@ -19,7 +19,7 @@
 #   editable text including source, unimportant text, binary docs & multimedia source
 #   files, viewable multimedia, archived/compressed, and unimportant non-text
 # - For uniqueness, we stay away from the Solarized foreground colors are -- either
-#   base00 (brightyellow) or base0 (brighblue).  However, they can be used if
+#   base00 (brightyellow) or base0 (brightblue).  However, they can be used if
 #   you know what the bg/fg colors of your terminal are, in order to optimize the display.
 # - 3 different options are provided: universal, solarized dark, and solarized light.
 #   The only difference between the universal scheme and one that's optimized for
@@ -214,6 +214,7 @@ EXEC 01;31  # Unix
 .cpp 32
 .cxx 32
 .objc 32
+.cl 32
 .sh 32
 .bash 32
 .csh 32
