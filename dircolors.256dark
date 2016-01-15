@@ -219,6 +219,7 @@ EXEC 00;38;5;64
 .sqlite          00;38;5;245
 .go              00;38;5;245
 .sql             00;38;5;245
+.csv             00;38;5;245
 
 # "unimportant" files as logs and backups (base01)
 .log        00;38;5;240
