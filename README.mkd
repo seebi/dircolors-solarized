@@ -62,15 +62,13 @@ configuration in gnome-terminal).
 Themes
 ------
 
-Each theme has is own folder in the `colors` dir. It contains 5 files:
+Each theme has is own folder in the `colors` dir. It contains the following
+files:
 
   * bd_color: bold color
   * bg_color: background color
   * fg_color: foreground color
-  * palette_dconf: palette for dconf (for gnome-terminal 3.8 or higher). Each
-    color is surrounded of simple quotes, and colors are comma separated.
-  * palette_gconf: palette for gconf (for gnome-terminal 3.6 or lower). Colors
-    are separated by colons.
+  * palette: list of colors for all standard color codes.
 
 No additional configuration is needed to add a theme, the installation script
 just list at launch the children folders in the `colors` dir.
