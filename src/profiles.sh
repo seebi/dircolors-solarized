@@ -60,7 +60,7 @@ interactive_new_profile() {
   local confirmation
 
   echo    "No profile found"
-  echo    "You need to create a new default profile to continue. Continue ?"
+  echo    "You need to create a new default profile to continue. Continue?"
   echo -n "(YES to continue) "
 
   read confirmation
