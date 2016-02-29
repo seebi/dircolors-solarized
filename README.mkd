@@ -49,6 +49,7 @@ by running:
 ### Gnome 3.6 or lower
 
     $ rm -r ~/.gconf/apps/gnome-terminal/profiles/Solarized/
+    $ gconftool-2 --recursive-unset /apps/gnome-terminal
 
 ### Gnome 3.8 or higher
 
