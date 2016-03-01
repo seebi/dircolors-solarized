@@ -313,6 +313,7 @@ EXEC 01;31  # Unix
 .mpeg 33
 .mpg 33
 .ogg  33
+.opus 33
 .ra 33
 .wav 33
 
