@@ -53,16 +53,16 @@ interactive_dircolors() {
     echo -en "A dircolors already exists, but can be incompatible with the "
     echo -en "solarized color scheme causing some colors problems when doing "
     echo -en "a \"ls\".\n"
-    echo -e "\n"
-    echo -en "1) Replace the actual dircolors by the seebi' "
-    echo -en "dircolors-solarized :\n"
-    echo -en "   https://github.com/seebi/dircolors-solarized (current "
-    echo -en "dircolors will be \nkept as backup).\n"
     echo
-    echo -en "2) [DEFAULT] I am aware of this potential problem and will"
-    echo -en "check my \n   dircolors (default path: ~/.dir_colors/dircolors) "
+    echo -en "1) Replace the actual dircolors by seebi' "
+    echo -en "dircolors-solarized: "
+    echo -en "https://github.com/seebi/dircolors-solarized (the actual "
+    echo -en "dircolors will be keeped as backup).\n"
+    echo
+    echo -en "2) [DEFAULT] I am awared about this potentiall problem and will "
+    echo -en "check my dircolors (default path: ~/.dir_colors/dircolors) "
     echo -en "in case of conflict.\n"
-    echo -e "\n"
+    echo
     read -p "Enter your choice : [2] " selection
     selection=${selection:-2}
 
