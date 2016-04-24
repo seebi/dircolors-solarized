@@ -5,6 +5,9 @@ Scripts for setting the Solarized color set with Gnome Terminal. To get nicely
 colored directory listings, you will also need to set up a [dircolors solarised
 color theme].
 
+For Mate Terminal, you can use [mate-terminal-colors-solarized], maintained
+by @cledoux.
+
 Colors
 ------
 
@@ -94,20 +97,8 @@ colors.
 
     set t_Co=16
 
-Mate terminal compatibility
----------------------------
 
-This script has to stay simple, and including Mate compatibility is not what I
-want, even if there is not a lot of changes between Mate-Terminal and
-Gnome-Terminal. Moreover, I do not use Mate so I would only test the script
-quickly in a virtual machine, and it is not the main platform target.
-
-However, I invite anybody to fork this script and to include the modifications
-for Mate (michel-slm already did the job in the pull-request #39, many thanks
-to him !). If it is maintained (like pulling the new commits from this repo
-and following the Mate Terminal changes), I will quote the forked repo in this
-readme.
-
+[mate-terminal-colors-solarized]: https://github.com/cledoux/mate-terminal-colors-solarized
 [Solarized homepage]:   http://ethanschoonover.com/solarized
 [Solarized repository]: https://github.com/altercation/solarized
 [Gnome Terminal Colors Solarized repository]: https://github.com/sigurdga/gnome-terminal-colors-solarized
