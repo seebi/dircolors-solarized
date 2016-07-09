@@ -34,8 +34,10 @@ this can be installed by running
 
     $ sudo apt-get install dconf-cli
 
-Then you can run the installation script:
+Then clone the repository and you can run the installation script:
 
+    $ git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git
+    $ cd gnome-terminal-colors-solarized
     $ ./install.sh
 
 And just follow the instructions.
