@@ -23,13 +23,15 @@ dl_dircolors() {
 copy_dicolors() {
   if [ "$1" != 1 ]
     then return
-  elif [ -f "$DIRCOLORS_DIR/dircolors" ]
+  else
     eval dl_dircolors
     dl_ok=$?
-    then if [ $dl_ok ]
-      then mv "$DIRCOLORS_DIR/dircolors" "$DIRCOLORS_DIR/dircolors.old"
-      echo -e "$DIRCOLORS_DIR/dircolors already exists, renaming it to"
-      echo "dircolors.old"
+    if [ $dl_ok ]
+      then if [ -f "$DIRCOLORS_DIR/dircolors" ]
+        then mv "$DIRCOLORS_DIR/dircolors" "$DIRCOLORS_DIR/dircolors.old"
+        echo -e "$DIRCOLORS_DIR/dircolors already exists, renaming it to"
+        echo "dircolors.old"
+      fi
     fi
   fi
   cp "$DIRCOLORS_SOLARIZED/dircolors" "$DIRCOLORS_DIR/dircolors"
@@ -45,23 +47,44 @@ copy_dicolors() {
   echo
 }
 
+msg_create_dircolors() {
+  echo -en "A dircolors adapted to solarized can be automatically "
+  echo -en "downloaded.\n"
+  echo
+  echo -en "1) Download seebi' dircolors-solarized: "
+  echo -en "https://github.com/seebi/dircolors-solarized\n"
+  echo
+  echo -en "2) [DEFAULT] I don't need any dircolors.\n"
+}
+
+msg_already_existing_dircolors() {
+  echo -en "A dircolors already exists in $DIRCOLORS_DIR, but can be "
+  echo -en "incompatible with the solarized color scheme causing some colors "
+  echo -en "problems when doing a \"ls\".\n"
+  echo
+  echo -en "1) Replace the actual dircolors by seebi' "
+  echo -en "dircolors-solarized: "
+  echo -en "https://github.com/seebi/dircolors-solarized (the actual "
+  echo -en "dircolors will be keeped as backup).\n"
+  echo
+  echo -en "2) [DEFAULT] I am awared about this potentiall problem and will "
+  echo -en "check my dircolors (default path: ~/.dir_colors/dircolors) "
+  echo -en "in case of conflict.\n"
+}
+
 interactive_dircolors() {
+  already_existing_dircolors=$1
   noselect=true
   while $noselect
   do
     echo
-    echo -en "A dircolors already exists, but can be incompatible with the "
-    echo -en "solarized color scheme causing some colors problems when doing "
-    echo -en "a \"ls\".\n"
-    echo
-    echo -en "1) Replace the actual dircolors by seebi' "
-    echo -en "dircolors-solarized: "
-    echo -en "https://github.com/seebi/dircolors-solarized (the actual "
-    echo -en "dircolors will be keeped as backup).\n"
-    echo
-    echo -en "2) [DEFAULT] I am awared about this potentiall problem and will "
-    echo -en "check my dircolors (default path: ~/.dir_colors/dircolors) "
-    echo -en "in case of conflict.\n"
+
+    if $already_existing_dircolors
+      then msg_already_existing_dircolors
+    else
+      msg_create_dircolors
+    fi
+
     echo
     read -p "Enter your choice : [2] " selection
     selection=${selection:-2}
@@ -82,9 +105,7 @@ check_dircolors() {
   if [ -d "$DIRCOLORS_DIR" ]
     then  [ "$(ls -A $DIRCOLORS_DIR)" ] && nonempty=true || nonempty=false
   fi
-  if [ $nonempty = true ]
-    then interactive_dircolors
-  fi
+  interactive_dircolors $nonempty
   return $(! $nonempty)
 }
 
