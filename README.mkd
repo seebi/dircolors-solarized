@@ -43,7 +43,9 @@ Then clone the repository and you can run the installation script:
 And just follow the instructions.
 
 You can also run the `set_dark.sh` or `set_light.sh` script, to directly set
-the dark or light solarized theme to the actived gnome-terminal profile.
+the dark or light solarized theme to the actived gnome-terminal profile. The
+options `--install-dircolors` or `--skip-dircolors` can also be used to install
+or not the solarized dircolors in a non-interactive mode.
 
 Uninstall
 ---------
