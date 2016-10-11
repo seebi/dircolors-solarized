@@ -16,5 +16,7 @@ get_default_profile() {
   echo $profile_name
 }
 
+SCHEME=$1
 PROFILE=${2:-"$(get_default_profile)"}
-$dir/install.sh -s $1 -p "$PROFILE"
+shift; shift
+$dir/install.sh -s "$SCHEME" -p "$PROFILE" $*

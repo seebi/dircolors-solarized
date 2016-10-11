@@ -18,6 +18,8 @@ show_help() {
   echo "    Color scheme to be used (will be asked otherwise)"
   echo "  -p profile, --profile profile, --profile profile"
   echo "    Gnome Terminal profile to overwrite (will be asked otherwise)"
+  echo "  --install-dircolors, --skip-dircolors"
+  echo "    Do or skip the dircolors installation in a non interactive mode"
 }
 
 validate_scheme() {
@@ -145,6 +147,12 @@ do
       profile=$2
       shift
     ;;
+    --install-dircolors )
+      install_dircolors=true
+    ;;
+    --skip-dircolors )
+      install_dircolors=false
+    ;;
   esac
   shift
 done
@@ -174,4 +182,11 @@ else
 fi
 
 set_profile_colors $profile $scheme
-check_dircolors || warning_message_dircolors
+
+if [ -n "$install_dircolors" ]
+    then if "$install_dircolors"
+        then copy_dircolors
+    fi
+else
+    check_dircolors || warning_message_dircolors
+fi

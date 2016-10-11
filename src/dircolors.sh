@@ -20,21 +20,19 @@ dl_dircolors() {
   return 0
 }
 
-copy_dicolors() {
-  if [ "$1" != 1 ]
-    then return
-  else
-    eval dl_dircolors
-    dl_ok=$?
-    if [ $dl_ok ]
-      then if [ -f "$DIRCOLORS_DIR/dircolors" ]
-        then mv "$DIRCOLORS_DIR/dircolors" "$DIRCOLORS_DIR/dircolors.old"
-        echo -e "$DIRCOLORS_DIR/dircolors already exists, renaming it to"
-        echo "dircolors.old"
-      fi
+copy_dircolors() {
+  eval dl_dircolors
+  dl_ok=$?
+  if [ $dl_ok ]
+    then if [ -f "$DIRCOLORS_DIR/dircolors" ]
+      then mv "$DIRCOLORS_DIR/dircolors" "$DIRCOLORS_DIR/dircolors.old"
+      echo -e "$DIRCOLORS_DIR/dircolors already exists, renaming it to"
+      echo "dircolors.old"
     fi
   fi
+
   cp "$DIRCOLORS_SOLARIZED/dircolors" "$DIRCOLORS_DIR/dircolors"
+
   echo
   echo "The new dircolors have been installed to $DIRCOLORS_DIR/dircolors."
   echo
@@ -89,7 +87,7 @@ interactive_dircolors() {
     read -p "Enter your choice : [2] " selection
     selection=${selection:-2}
 
-    if [ "$selection" -gt 2 -o "$selection" -lt 1 ]
+    if [[ "$selection" -gt 2 || "$selection" -lt 1 ]]
       then echo "$selection is not a valid entry. Please Restart"
       echo
       noselect=true
@@ -97,7 +95,10 @@ interactive_dircolors() {
       noselect=false
     fi
   done
-  copy_dicolors $selection
+
+  if [ "$selection" == 1 ]
+    then copy_dircolors
+  fi
 }
 
 check_dircolors() {
