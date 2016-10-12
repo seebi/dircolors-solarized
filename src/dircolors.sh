@@ -31,6 +31,7 @@ copy_dircolors() {
     fi
   fi
 
+  mkdir -p "$DIRCOLORS_DIR"
   cp "$DIRCOLORS_SOLARIZED/dircolors" "$DIRCOLORS_DIR/dircolors"
 
   echo
