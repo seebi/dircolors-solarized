@@ -1,0 +1,109 @@
+Solarized Colorscheme for Gnome Terminal
+========================================
+
+Scripts for setting the Solarized color set with Gnome Terminal. To get nicely
+colored directory listings, you will also need to set up a [dircolors solarised
+color theme].
+
+For Mate Terminal, you can use [mate-terminal-colors-solarized], maintained
+by @cledoux.
+
+Colors
+------
+
+Only the foreground, background and highlight colors are different in the light
+and dark color sets, as one of the main ideas behind Ethan Schonoovers work is
+to use the same colors in the palette for both.
+
+See the [Solarized homepage] for theory behind the colors, screenshots, details
+and colorscheme versions for Vim, Mutt, popular terminal emulators and other
+applications.
+
+For the original works of Ethan Schoonover, visit the [Solarized repository].
+The scripts for Gnome Terminal is maintained in [Gnome Terminal Colors
+Solarized repository].
+
+Installation and usage
+----------------------
+
+To be able to uninstall, we highly recommend that you create a new Gnome
+Terminal profile, using the menus in Gnome Terminal.
+
+You need the `dconf` command (if you run a recent Gnome version). With Ubuntu,
+this can be installed by running
+
+    $ sudo apt-get install dconf-cli
+
+Then clone the repository and you can run the installation script:
+
+    $ git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git
+    $ cd gnome-terminal-colors-solarized
+    $ ./install.sh
+
+And just follow the instructions.
+
+You can also run the `set_dark.sh` or `set_light.sh` script, to directly set
+the dark or light solarized theme to the actived gnome-terminal profile. The
+options `--install-dircolors` or `--skip-dircolors` can also be used to install
+or not the solarized dircolors in a non-interactive mode.
+
+Uninstall
+---------
+
+Change to another profile in Gnome Terminal, then remove the Solarized profile
+by running:
+
+### Gnome 3.6 or lower
+
+    $ rm -r ~/.gconf/apps/gnome-terminal/profiles/Solarized/
+    $ gconftool-2 --recursive-unset /apps/gnome-terminal
+
+### Gnome 3.8 or higher
+
+Be sure to have the dconf-cli package installed and do:
+
+    $ dconf reset -f /org/gnome/terminal/legacy/profiles:/PROFILE_ID"
+
+Replace PROFILE_ID by your profile ID (you can get it in your profile
+configuration in gnome-terminal).
+
+Themes
+------
+
+Each theme has is own folder in the `colors` dir. It contains the following
+files:
+
+  * bd_color: bold color
+  * bg_color: background color
+  * fg_color: foreground color
+  * palette: list of colors for all standard color codes.
+
+No additional configuration is needed to add a theme, the installation script
+just list at launch the children folders in the `colors` dir.
+
+Contributors
+------------
+
+* Sigurd Gartmann <sigurdga@sigurdga.no>
+* Anthony Ruhier <anthony.ruhier@gmail.com>
+* Paul Thomson <captbunzo@gmail.com>
+* Techlive Zheng <techlivezheng@gmail.com>
+* Daniel Graña <dangra@gmail.com>
+
+FAQ
+===
+
+Conflicting background colors in VIM
+------------------------------------
+
+Use the 16 colors terminal option to get VIM to look like GVIM with solarized
+colors.
+
+    set t_Co=16
+
+
+[mate-terminal-colors-solarized]: https://github.com/cledoux/mate-terminal-colors-solarized
+[Solarized homepage]:   http://ethanschoonover.com/solarized
+[Solarized repository]: https://github.com/altercation/solarized
+[Gnome Terminal Colors Solarized repository]: https://github.com/sigurdga/gnome-terminal-colors-solarized
+[dircolors solarised color theme]: https://github.com/seebi/dircolors-solarized
