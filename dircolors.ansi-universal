@@ -263,6 +263,11 @@ EXEC 01;31  # Unix
 .go 32
 .sql 32
 .csv 32
+.sv 32
+.svh 32
+.v 32
+.vh 32
+.vhd 32
 
 ### Multimedia formats
 
