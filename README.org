@@ -1,0 +1,17 @@
+
+#+TITLE:	Dircolors Orange
+#+AUTHOR:	Jaxson Van Doorn
+#+EMAIL:	jaxson.vandoorn@gmail.com
+#+OPTIONS:  num:nil
+
+* Dircolors Orange
+*Directory colors themes for GNU shells.*
+
+/dircolors.ansi-darkorange/ is slighly modfied version of /dircolors.ansi-dark/.
+
+Forked from [[https://github.com/seebi/dircolors-solarized][dircolors-solarized]].
+
+#+CAPTION: Dircolors Orange
+#+NAME:    Dircolors Orange
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+[[./screenshots/orange.png]]
