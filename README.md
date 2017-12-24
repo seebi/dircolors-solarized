@@ -1,14 +1,4 @@
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">Dircolors Orange</a></li>
-</ul>
-</div>
-</div>
-
-
-# Dircolors Orange<a id="sec-1" name="sec-1"></a>
+# Dircolors Orange
 
 **Directory colors themes for GNU shells.**
 

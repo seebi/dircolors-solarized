@@ -2,7 +2,7 @@
 #+TITLE:	Dircolors Orange
 #+AUTHOR:	Jaxson Van Doorn
 #+EMAIL:	jaxson.vandoorn@gmail.com
-#+OPTIONS:  num:nil
+#+OPTIONS:  num:nil toc:nil
 
 * Dircolors Orange
 *Directory colors themes for GNU shells.*
