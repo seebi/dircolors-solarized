@@ -188,6 +188,8 @@ EXEC 00;38;5;64
 .eps    00;38;5;136
 .CR2    00;38;5;136
 .ico    00;38;5;136
+.nef    00;38;5;136 # Nikon RAW format
+.NEF    00;38;5;136
 
 # Files of special interest (base1)
 .tex             00;38;5;245

@@ -308,6 +308,8 @@ EXEC 01;31  # Unix
 .xwd 33
 .xwd 33
 .yuv 33
+.nef 33 # Nikon RAW format
+.NEF 33
 
 # Audio
 .aac 33
