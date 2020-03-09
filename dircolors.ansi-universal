@@ -208,6 +208,7 @@ EXEC 01;31  # Unix
 .org 32
 .md 32
 .mkd 32
+.bib 32
 
 # Source text
 .h 32
@@ -478,3 +479,4 @@ EXEC 01;31  # Unix
 .aes 34
 .enc 34
 .sqlite 34
+.db 34
