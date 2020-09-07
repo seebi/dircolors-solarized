@@ -456,7 +456,7 @@ EXEC 01;31  # Unix
 #.ORIG 01;36
 #.swp 01;36
 #.swo 01;36
-#*,v 01;36
+#*.v 01;36
 .bak 01;33
 .BAK 01;33
 .old 01;33
@@ -470,7 +470,7 @@ EXEC 01;31  # Unix
 .ORIG 01;33
 .swp 01;33
 .swo 01;33
-*,v 01;33
+*.v 01;33
 
 # The brightmagenta (Solarized: purple) color is free for you to use for your
 # custom file type

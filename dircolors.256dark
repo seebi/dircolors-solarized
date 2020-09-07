@@ -3,7 +3,6 @@
 # Used and tested with dircolors (GNU coreutils) 8.5
 #
 # @author  {@link http://sebastian.tramp.name Sebastian Tramp}
-# @license http://sam.zoy.org/wtfpl/  Do What The Fuck You Want To Public License (WTFPL)
 #
 # More Information at
 # https://github.com/seebi/dircolors-solarized
@@ -108,7 +107,7 @@ NORMAL 00;38;5;244 # no color code at all
 #FILE 00 # regular file: use no color at all
 RESET 0 # reset to "normal" color
 DIR 00;38;5;33 # directory 01;34
-LINK 00;38;5;37 # symbolic link. (If you set this to 'target' instead of a
+LINK 01;38;5;37 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
 FIFO 48;5;230;38;5;136;01 # pipe
@@ -124,41 +123,41 @@ STICKY_OTHER_WRITABLE 48;5;64;38;5;230 # dir that is sticky and other-writable (
 OTHER_WRITABLE 48;5;235;38;5;33 # dir that is other-writable (o+w) and not sticky
 STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
-EXEC 00;38;5;64
+EXEC 01;38;5;64
 
 ## Archives or compressed (violet + bold for compression)
 .tar    00;38;5;61
-.tgz    00;38;5;61
-.arj    00;38;5;61
-.taz    00;38;5;61
-.lzh    00;38;5;61
-.lzma   00;38;5;61
-.tlz    00;38;5;61
-.txz    00;38;5;61
-.zip    00;38;5;61
-.zst    00;38;5;61
-.z      00;38;5;61
-.Z      00;38;5;61
-.dz     00;38;5;61
-.gz     00;38;5;61
-.lz     00;38;5;61
-.xz     00;38;5;61
-.bz2    00;38;5;61
-.bz     00;38;5;61
-.tbz    00;38;5;61
-.tbz2   00;38;5;61
-.tz     00;38;5;61
-.deb    00;38;5;61
-.rpm    00;38;5;61
-.jar    00;38;5;61
-.rar    00;38;5;61
-.ace    00;38;5;61
-.zoo    00;38;5;61
-.cpio   00;38;5;61
-.7z     00;38;5;61
-.rz     00;38;5;61
-.apk    00;38;5;61
-.gem    00;38;5;61
+.tgz    01;38;5;61
+.arj    01;38;5;61
+.taz    01;38;5;61
+.lzh    01;38;5;61
+.lzma   01;38;5;61
+.tlz    01;38;5;61
+.txz    01;38;5;61
+.zip    01;38;5;61
+.zst    01;38;5;61
+.z      01;38;5;61
+.Z      01;38;5;61
+.dz     01;38;5;61
+.gz     01;38;5;61
+.lz     01;38;5;61
+.xz     01;38;5;61
+.bz2    01;38;5;61
+.bz     01;38;5;61
+.tbz    01;38;5;61
+.tbz2   01;38;5;61
+.tz     01;38;5;61
+.deb    01;38;5;61
+.rpm    01;38;5;61
+.jar    01;38;5;61
+.rar    01;38;5;61
+.ace    01;38;5;61
+.zoo    01;38;5;61
+.cpio   01;38;5;61
+.7z     01;38;5;61
+.rz     01;38;5;61
+.apk    01;38;5;61
+.gem    01;38;5;61
 
 # Image formats (yellow)
 .jpg    00;38;5;136
@@ -191,43 +190,44 @@ EXEC 00;38;5;64
 .ico    00;38;5;136
 .nef    00;38;5;136 # Nikon RAW format
 .NEF    00;38;5;136
+.webp   00;38;5;136 # https://en.wikipedia.org/wiki/WebP
 
-# Files of special interest (base1)
-.tex             00;38;5;245
-.rdf             00;38;5;245
-.owl             00;38;5;245
-.n3              00;38;5;245
-.ttl             00;38;5;245
-.nt              00;38;5;245
-.torrent         00;38;5;245
-.xml             00;38;5;245
-*Makefile        00;38;5;245
-*Rakefile        00;38;5;245
-*Dockerfile      00;38;5;245
-*build.xml       00;38;5;245
-*rc              00;38;5;245
-*1               00;38;5;245
-.nfo             00;38;5;245
-*README          00;38;5;245
-*README.txt      00;38;5;245
-*readme.txt      00;38;5;245
-.md              00;38;5;245
-*README.markdown 00;38;5;245
-.ini             00;38;5;245
-.yml             00;38;5;245
-.cfg             00;38;5;245
-.conf            00;38;5;245
-.h               00;38;5;245
-.hpp             00;38;5;245
-.c               00;38;5;245
-.cpp             00;38;5;245
-.cxx             00;38;5;245
-.cc              00;38;5;245
-.objc            00;38;5;245
-.sqlite          00;38;5;245
-.go              00;38;5;245
-.sql             00;38;5;245
-.csv             00;38;5;245
+# Files of special interest (base1 + bold)
+.tex             01;38;5;245
+.rdf             01;38;5;245
+.owl             01;38;5;245
+.n3              01;38;5;245
+.ttl             01;38;5;245
+.nt              01;38;5;245
+.torrent         01;38;5;245
+.xml             01;38;5;245
+*Makefile        01;38;5;245
+*Rakefile        01;38;5;245
+*Dockerfile      01;38;5;245
+*build.xml       01;38;5;245
+*rc              01;38;5;245
+*1               01;38;5;245
+.nfo             01;38;5;245
+*README          01;38;5;245
+*README.txt      01;38;5;245
+*readme.txt      01;38;5;245
+.md              01;38;5;245
+*README.markdown 01;38;5;245
+.ini             01;38;5;245
+.yml             01;38;5;245
+.cfg             01;38;5;245
+.conf            01;38;5;245
+.h               01;38;5;245
+.hpp             01;38;5;245
+.c               01;38;5;245
+.cpp             01;38;5;245
+.cxx             01;38;5;245
+.cc              01;38;5;245
+.objc            01;38;5;245
+.sqlite          01;38;5;245
+.go              01;38;5;245
+.sql             01;38;5;245
+.csv             01;38;5;245
 
 # "unimportant" files as logs and backups (base01)
 .log        00;38;5;240
@@ -273,35 +273,34 @@ EXEC 00;38;5;64
 .xspf   00;38;5;166
 
 # Video formats (as audio + bold)
-.mov    00;38;5;166
-.MOV    00;38;5;166
-.mpg    00;38;5;166
-.mpeg   00;38;5;166
-.m2v    00;38;5;166
-.mkv    00;38;5;166
-.ogm    00;38;5;166
-.mp4    00;38;5;166
-.m4v    00;38;5;166
-.mp4v   00;38;5;166
-.vob    00;38;5;166
-.qt     00;38;5;166
-.nuv    00;38;5;166
-.wmv    00;38;5;166
-.asf    00;38;5;166
-.rm     00;38;5;166
-.rmvb   00;38;5;166
-.flc    00;38;5;166
-.avi    00;38;5;166
-.fli    00;38;5;166
-.flv    00;38;5;166
-.gl     00;38;5;166
-.m2ts   00;38;5;166
-.divx   00;38;5;166
-.webm   00;38;5;166
+.mov    01;38;5;166
+.MOV    01;38;5;166
+.mpg    01;38;5;166
+.mpeg   01;38;5;166
+.m2v    01;38;5;166
+.mkv    01;38;5;166
+.ogm    01;38;5;166
+.mp4    01;38;5;166
+.m4v    01;38;5;166
+.mp4v   01;38;5;166
+.vob    01;38;5;166
+.qt     01;38;5;166
+.nuv    01;38;5;166
+.wmv    01;38;5;166
+.asf    01;38;5;166
+.rm     01;38;5;166
+.rmvb   01;38;5;166
+.flc    01;38;5;166
+.avi    01;38;5;166
+.fli    01;38;5;166
+.flv    01;38;5;166
+.gl     01;38;5;166
+.m2ts   01;38;5;166
+.divx   01;38;5;166
+.webm   01;38;5;166
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
-.axv 00;38;5;166
-.anx 00;38;5;166
-.ogv 00;38;5;166
-.ogx 00;38;5;166
-
+.axv 01;38;5;166
+.anx 01;38;5;166
+.ogv 01;38;5;166
+.ogx 01;38;5;166
 
