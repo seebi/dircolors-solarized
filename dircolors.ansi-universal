@@ -405,6 +405,7 @@ EXEC 01;31  # Unix
 .z    1;35
 .Z    1;35
 .zip  1;35
+.zst  1;35
 
 # For testing
 .ANSI-30-black 30
