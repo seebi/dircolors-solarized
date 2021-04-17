@@ -77,6 +77,7 @@ TERM xterm-256color-italic
 TERM xterm-88color
 TERM xterm-color
 TERM xterm-debian
+TERM xterm-kitty
 TERM xterm-termite
 
 ## Documentation
