@@ -309,6 +309,8 @@ EXEC 01;31  # Unix
 .yuv 33
 .NEF 33 # Nikon RAW format
 .nef 33
+.heic 33
+.HEIC 33
 
 # Audio
 .aac 33

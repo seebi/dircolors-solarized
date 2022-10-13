@@ -192,6 +192,8 @@ EXEC 01;38;5;64
 .nef    00;38;5;136 # Nikon RAW format
 .NEF    00;38;5;136
 .webp   00;38;5;136 # https://en.wikipedia.org/wiki/WebP
+.heic   00;38;5;136
+.HEIC   00;38;5;136
 
 # Files of special interest (base1 + bold)
 .tex             01;38;5;245
