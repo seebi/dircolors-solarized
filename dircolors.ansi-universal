@@ -288,7 +288,6 @@ EXEC 01;31  # Unix
 .mng 33
 .pbm 33
 .pcx 33
-.pdf 33
 .pgm 33
 .png 33
 .PNG 33
@@ -379,6 +378,7 @@ EXEC 01;31  # Unix
 .otp 31
 .fla 31
 .psd 31
+.pdf 31
 
 # Archives, compressed
 .7z   1;35
