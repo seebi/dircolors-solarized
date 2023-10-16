@@ -126,7 +126,7 @@ Colors were selected based on the characteristics of the items to be displayed:
 
 Solarized Dark (this example uses iTerm2 on OS X):
 
-![Solarized Dark](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-dircolors-in-iTerm2-solarized_dark.png)]
+![Solarized Dark](https://github.com/huyz/dircolors-solarized/raw/master/img/screen-dircolors-in-iTerm2-solarized_dark.png)
 
 To see what this theme looks like when the terminal emulator is set with different color palettes:
 
