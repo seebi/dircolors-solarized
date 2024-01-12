@@ -194,6 +194,7 @@ EXEC 00;38;5;64
 .webp   00;38;5;136 # https://en.wikipedia.org/wiki/WebP
 .heic   00;38;5;136
 .HEIC   00;38;5;136
+.avif   00;38;5;136
 
 # Files of special interest (base1 + bold)
 .tex             00;38;5;245
