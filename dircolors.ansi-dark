@@ -67,6 +67,7 @@ TERM dvtm-256color
 TERM Eterm
 TERM eterm-color
 TERM fbterm
+TERM foot
 TERM gnome
 TERM gnome-256color
 TERM jfbterm
