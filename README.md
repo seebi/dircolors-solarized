@@ -23,6 +23,7 @@ homebrew (coreutils).
   * [Theme #2: "ansi-\*"](#ansi)
 * [Installation](#installation)
 * [Understanding Solarized Colors in Terminals](#understanding-solarized-colors-in-terminals)
+* [Angry Flashing Tab Complete Fix](#angry-flashing-tab-complete-fix)
 
 <h2 id="repositories">Repositories</h2>
 
@@ -382,3 +383,22 @@ NOTE:
     approximates the RGB values in the HEX column).
 *   For "ANSI" themes, the TERMCOL column lists the ANSI colors that are replaced 
     with the Solarized colors listed under the HEX column.
+
+
+<h2 id="angry-flashing-tab-complete-fix">Angry Flashing Tab Complete Fix</h2>
+If you have a tab complete in e.g. Python which is hard to read because it's flashing (and uses a red background), such as at
+
+https://asciinema.org/a/A1wIPeDTmoSq8NOoPJQ0kgTvm
+
+The problem is fundamentally the default python/readline tab completion highlights files, and most missing python things aren't existing files (you can test this by creating a file say `__doc__` and hitting tab).
+
+You can fix this with the following inputrc
+
+```
+$if python
+  set colored-stats off
+$endif
+```
+
+See
+https://unix.stackexchange.com/questions/605166/why-does-setting-mi-in-ls-colors-effect-postgresql-and-python-tab-completion
