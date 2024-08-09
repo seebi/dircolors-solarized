@@ -38,6 +38,7 @@ TERM konsole
 TERM konsole-256color
 TERM kterm
 TERM linux
+TERM linux-16color
 TERM linux-c
 TERM mach-color
 TERM mlterm
