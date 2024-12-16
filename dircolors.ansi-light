@@ -232,6 +232,7 @@ EXEC 01;31  # Unix
 .el 32
 .vim 32
 .java 32
+.lua 32
 .pl 32
 .pm 32
 .py 32
