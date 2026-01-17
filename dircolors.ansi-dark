@@ -211,10 +211,13 @@ EXEC 01;31  # Unix
 ### Text formats
 
 # Text that we can edit with a regular editor
+.adoc 32
 .txt 32
 .org 32
 .md 32
 .mkd 32
+.markdown 32
+.rst 32
 
 # Source text
 .h 32
